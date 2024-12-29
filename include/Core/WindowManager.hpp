@@ -12,6 +12,10 @@
 
 #include "Input.hpp"
 
+struct QuitEvent : public Event {
+
+};
+
 class WindowManager {
 public:
     void Init(std::string const& windowName,
@@ -32,7 +36,19 @@ private:
 
     bool toQuit = false;
 
+    // Wrapper helper function for updating key log bitfield
+    void UpdateInput();
+
+    // Quit event function
+    void QuitHandler(const QuitEvent& Event);
+
+    // Bitfield for key inputs (defined in Input.hpp)
     std::bitset<static_cast<size_t>(InputType::COUNT)> input;
+
+    // Data related to mouse movements
+    float mouseDeltaX = 0.0f;
+    float mouseDeltaY = 0.0f;
+    bool mouseMoved = false;
 };
 
 

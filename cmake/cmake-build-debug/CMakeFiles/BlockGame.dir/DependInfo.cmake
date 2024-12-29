@@ -8,15 +8,15 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/colli/Desktop/block game/src/glad.c" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/glad.c.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/glad.c.obj.d"
-  "C:/Users/colli/Desktop/block game/src/Core/Log.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.obj.d"
-  "C:/Users/colli/Desktop/block game/src/Core/Math.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.obj.d"
-  "C:/Users/colli/Desktop/block game/src/Core/WindowManager.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.obj.d"
-  "C:/Users/colli/Desktop/block game/src/ECS/Systems/CameraSystem.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.obj.d"
-  "C:/Users/colli/Desktop/block game/src/ECS/Systems/PhysicsSystem.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.obj.d"
-  "C:/Users/colli/Desktop/block game/src/ECS/Systems/RenderSystem.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.obj.d"
-  "C:/Users/colli/Desktop/block game/src/Graphics/Shader.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.obj.d"
-  "C:/Users/colli/Desktop/block game/src/main.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/main.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/main.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/glad.c" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/glad.c.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/glad.c.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/Core/Log.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/Core/Math.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.obj.d"
+  "C:/Users/colli/Desktop/BlockGame/src/main.cpp" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj" "gcc" "CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -8,6 +8,12 @@
 
 extern Coordinator coordinator;
 
+void WindowManager::QuitHandler(const QuitEvent &Event) {
+    toQuit = true;
+    Log::Output(Log::Severity::HAPPY, "Quitting...");
+}
+
+
 void WindowManager::Init(std::string const &windowName, unsigned int windowWidth, unsigned int windowHeight, unsigned int windowPosX, unsigned int windowPosY) {
     // Init GLFW
     if(!glfwInit()) {
@@ -47,6 +53,12 @@ void WindowManager::Init(std::string const &windowName, unsigned int windowWidth
     glEnable(GL_DEPTH_TEST);
     glDisable(GL_CULL_FACE);
 
+    // Disable cursor
+    glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+    // Enable quit event
+    coordinator.AddEventListener<QuitEvent>(this, &WindowManager::QuitHandler);
+
     Log::Output(Log::Severity::HAPPY, "Window initialised!");
 }
 
@@ -61,11 +73,42 @@ void WindowManager::ProcessInput() {
         toQuit = true;
     }
 
+    // Reset input states and capture mouse position changes
+    double mouseX, mouseY;
+    glfwGetCursorPos(window, &mouseX, &mouseY);
+
+    float deltaX = 0.0f, deltaY = 0.0f;
+
+    if (mouseMoved) {
+        deltaX = static_cast<float>(mouseX) - mouseDeltaX;
+        deltaY = static_cast<float>(mouseY) - mouseDeltaY;
+    } else {
+        mouseMoved = true;
+    }
+
+    mouseDeltaX = static_cast<float>(mouseX);
+    mouseDeltaY = static_cast<float>(mouseY);
+
+    UpdateInput();
+
+    // Dispatch if there was any input
+    coordinator.DispatchEvent(InputEvent(input, deltaX, deltaY));
+}
+
+void WindowManager::Shutdown() {
+    glfwDestroyWindow(window);
+    glfwTerminate();
+}
+
+void WindowManager::UpdateInput() {
     // reset bits
     // maybe bool is faster?
     input.reset();
 
     // Update input states
+    if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        coordinator.DispatchEvent(QuitEvent());
+    }
     if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT)) {
         input.set(static_cast<size_t>(InputType::MouseLeft));
     }
@@ -84,15 +127,14 @@ void WindowManager::ProcessInput() {
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
         input.set(static_cast<size_t>(InputType::KeyD));
     }
-
-    // Dispatch if there was any input
-    coordinator.DispatchEvent(InputEvent(input));
+    if(glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+        input.set(static_cast<size_t>(InputType::KeySpace));
+    }
+    if(glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
+        input.set(static_cast<size_t>(InputType::KeyLeftCtrl));
+    }
 }
 
-void WindowManager::Shutdown() {
-    glfwDestroyWindow(window);
-    glfwTerminate();
-}
 
 
 

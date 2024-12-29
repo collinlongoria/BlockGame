@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2024.2.1\bin\cmake\win\x64\bin\cmake.exe"
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\colli\Desktop\block game\cmake"
+CMAKE_SOURCE_DIR = C:\Users\colli\Desktop\BlockGame\cmake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\colli\Desktop\block game\cmake\cmake-build-release"
+CMAKE_BINARY_DIR = C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\colli\Desktop\block game\cmake\cmake-build-release\CMakeFiles" "C:\Users\colli\Desktop\block game\cmake\cmake-build-release\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-release\CMakeFiles C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-release\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\colli\Desktop\block game\cmake\cmake-build-release\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -128,221 +128,221 @@ BlockGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/build
 .PHONY : BlockGame/fast
 
-C_/Users/colli/Desktop/block_game/src/Core/Log.obj: C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Log.obj
+C_/Users/colli/Desktop/BlockGame/src/Core/Log.obj: C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Log.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/Core/Log.i: C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Log.i
+C_/Users/colli/Desktop/BlockGame/src/Core/Log.i: C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Log.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/Core/Log.s: C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Log.s
+C_/Users/colli/Desktop/BlockGame/src/Core/Log.s: C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Log.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Log.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.s
 
-C_/Users/colli/Desktop/block_game/src/Core/Math.obj: C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Math.obj
+C_/Users/colli/Desktop/BlockGame/src/Core/Math.obj: C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Math.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/Core/Math.i: C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Math.i
+C_/Users/colli/Desktop/BlockGame/src/Core/Math.i: C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Math.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/Core/Math.s: C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Math.s
+C_/Users/colli/Desktop/BlockGame/src/Core/Math.s: C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Math.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/Math.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Math.cpp.s
 
-C_/Users/colli/Desktop/block_game/src/Core/WindowManager.obj: C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/WindowManager.obj
+C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.obj: C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/Core/WindowManager.i: C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/WindowManager.i
+C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.i: C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/Core/WindowManager.s: C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/WindowManager.s
+C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.s: C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Core/WindowManager.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.cpp.s
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.obj: C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.obj
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.i: C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.i
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.i: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.s: C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.s
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.s: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.obj: C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.obj
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.i: C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.i
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.i: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.s: C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.s
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.s: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.s
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.obj: C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.obj
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.i: C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.i
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.i: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.s: C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.s
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.s: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.s
 
-C_/Users/colli/Desktop/block_game/src/Graphics/Shader.obj: C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Graphics/Shader.obj
+C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.obj: C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/Graphics/Shader.i: C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Graphics/Shader.i
+C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.i: C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/Graphics/Shader.s: C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Graphics/Shader.s
+C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.s: C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/Graphics/Shader.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.s
 
-C_/Users/colli/Desktop/block_game/src/glad.obj: C_/Users/colli/Desktop/block_game/src/glad.c.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/glad.obj
+C_/Users/colli/Desktop/BlockGame/src/glad.obj: C_/Users/colli/Desktop/BlockGame/src/glad.c.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/glad.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/glad.c.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/glad.c.obj
+C_/Users/colli/Desktop/BlockGame/src/glad.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/glad.c.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.c.obj
 
-C_/Users/colli/Desktop/block_game/src/glad.i: C_/Users/colli/Desktop/block_game/src/glad.c.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/glad.i
+C_/Users/colli/Desktop/BlockGame/src/glad.i: C_/Users/colli/Desktop/BlockGame/src/glad.c.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/glad.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/glad.c.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/glad.c.i
+C_/Users/colli/Desktop/BlockGame/src/glad.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/glad.c.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.c.i
 
-C_/Users/colli/Desktop/block_game/src/glad.s: C_/Users/colli/Desktop/block_game/src/glad.c.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/glad.s
+C_/Users/colli/Desktop/BlockGame/src/glad.s: C_/Users/colli/Desktop/BlockGame/src/glad.c.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/glad.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/glad.c.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/glad.c.s
+C_/Users/colli/Desktop/BlockGame/src/glad.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/glad.c.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.c.s
 
-C_/Users/colli/Desktop/block_game/src/main.obj: C_/Users/colli/Desktop/block_game/src/main.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/main.obj
+C_/Users/colli/Desktop/BlockGame/src/main.obj: C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/main.obj
 
 # target to build an object file
-C_/Users/colli/Desktop/block_game/src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/main.cpp.obj
-.PHONY : C_/Users/colli/Desktop/block_game/src/main.cpp.obj
+C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj
 
-C_/Users/colli/Desktop/block_game/src/main.i: C_/Users/colli/Desktop/block_game/src/main.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/main.i
+C_/Users/colli/Desktop/BlockGame/src/main.i: C_/Users/colli/Desktop/BlockGame/src/main.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/main.i
 
 # target to preprocess a source file
-C_/Users/colli/Desktop/block_game/src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/main.cpp.i
-.PHONY : C_/Users/colli/Desktop/block_game/src/main.cpp.i
+C_/Users/colli/Desktop/BlockGame/src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/main.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/main.cpp.i
 
-C_/Users/colli/Desktop/block_game/src/main.s: C_/Users/colli/Desktop/block_game/src/main.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/main.s
+C_/Users/colli/Desktop/BlockGame/src/main.s: C_/Users/colli/Desktop/BlockGame/src/main.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/main.s
 
 # target to generate assembly for a file
-C_/Users/colli/Desktop/block_game/src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/block_game/src/main.cpp.s
-.PHONY : C_/Users/colli/Desktop/block_game/src/main.cpp.s
+C_/Users/colli/Desktop/BlockGame/src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/main.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/main.cpp.s
 
 # Help Target
 help:
@@ -353,33 +353,33 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... BlockGame
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/Log.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/Log.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/Log.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/Math.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/Math.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/Math.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/WindowManager.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/WindowManager.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/Core/WindowManager.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/CameraSystem.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/PhysicsSystem.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/ECS/Systems/RenderSystem.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/Graphics/Shader.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/Graphics/Shader.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/Graphics/Shader.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/glad.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/glad.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/glad.s
-	@echo ... C_/Users/colli/Desktop/block_game/src/main.obj
-	@echo ... C_/Users/colli/Desktop/block_game/src/main.i
-	@echo ... C_/Users/colli/Desktop/block_game/src/main.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Log.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Log.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Log.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Math.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Math.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Math.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/WindowManager.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/main.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/main.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/main.s
 .PHONY : help
 
 

@@ -31,23 +31,12 @@
 
 Coordinator coordinator;
 
-void HandleInput(const InputEvent& event) {
-	for (size_t i = 0; i < event.inputs.size(); ++i) {
-		if (event.inputs.test(i)) { // Check if the input is active
-			const std::string inputName = GetInputTypeName(static_cast<InputType>(i));
-			Log::Output(Log::Severity::MESSAGE, inputName + " is active.");
-		}
-	}
-}
-
 int main() {
     // Init coordinator
     coordinator.Init();
 
     WindowManager windowManager;
     windowManager.Init("BlockGame", 1024, 760, 0, 0);
-
-	coordinator.AddEventListener<InputEvent>(&HandleInput);
 
 	coordinator.RegisterComponent<Camera>();
 	coordinator.RegisterComponent<Gravity>();
@@ -122,8 +111,23 @@ int main() {
     	windowManager.ProcessInput();
 
     	auto& trans = coordinator.GetComponent<Transform>(cubeEntity);
+    	auto& col = coordinator.GetComponent<Renderable>(cubeEntity);
     	trans.rotation.x += 2 * dt;
     	trans.rotation.y += 3 * dt;
+    	trans.rotation.z *= -1.5 * dt;
+
+    	float speed = 0.01f;               // Adjust speed of the color change
+
+    	if (col.color.r > 0.0f && col.color.b <= 0.0f) {
+    		col.color.r -= speed; // Red to Yellow to Green
+    		col.color.g += speed;
+    	} else if (col.color.g > 0.0f && col.color.r <= 0.0f) {
+    		col.color.g -= speed; // Green to Cyan to Blue
+    		col.color.b += speed;
+    	} else if (col.color.b > 0.0f && col.color.g <= 0.0f) {
+    		col.color.b -= speed; // Blue to Magenta to Red
+    		col.color.r += speed;
+    	}
 
     	physicsSystem->Update(dt);
 

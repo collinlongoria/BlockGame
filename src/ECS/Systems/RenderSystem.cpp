@@ -118,9 +118,9 @@ void RenderSystem::Update(float dt) {
 
     // Calculate the forward direction based on the camera's orientation
     Vec3 forward = glm::normalize(glm::vec3(
-        glm::cos(cameraTransform.rotation.y) * glm::cos(cameraTransform.rotation.x),
-        glm::sin(cameraTransform.rotation.x),
-        glm::sin(cameraTransform.rotation.y) * glm::cos(cameraTransform.rotation.x)
+     sin(glm::radians(cameraTransform.rotation.y)) * cos(glm::radians(cameraTransform.rotation.x)), // Swap sin/cos for OpenGL
+    sin(glm::radians(cameraTransform.rotation.x)),
+    -cos(glm::radians(cameraTransform.rotation.y)) * cos(glm::radians(cameraTransform.rotation.x))// Negative Z for forward
     ));
 
     // Calculate the up direction based on the camera's orientation

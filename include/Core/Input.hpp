@@ -17,34 +17,19 @@ enum class InputType {
     KeyA,
     KeyS,
     KeyD,
+    KeySpace,
+    KeyLeftCtrl,
+    KeyEscape,
     COUNT
 };
 
 struct InputEvent : public Event {
     std::bitset<static_cast<size_t>(InputType::COUNT)> inputs;
+    float mouseDeltaX;
+    float mouseDeltaY;
 
-    explicit InputEvent(std::bitset<static_cast<size_t>(InputType::COUNT)> _inputs)
-        : inputs(_inputs) {}
+    explicit InputEvent(std::bitset<static_cast<size_t>(InputType::COUNT)> _inputs, float dX, float dY)
+        : inputs(_inputs), mouseDeltaX(dX), mouseDeltaY(dY) {}
 };
-
-// For debugging purposes, returns the key pressed in string form
-static std::string GetInputTypeName(InputType inputType) {
-    switch (inputType) {
-        case InputType::MouseLeft:
-            return "Left Mouse";
-        case InputType::MouseRight:
-            return "Right Mouse";
-        case InputType::KeyW:
-            return "W Key";
-        case InputType::KeyA:
-            return "A Key";
-        case InputType::KeyS:
-            return "S Key";
-        case InputType::KeyD:
-            return "D Key";
-        default:
-            return "Unknown Input";
-    }
-}
 
 #endif //INPUT_HPP
