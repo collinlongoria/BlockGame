@@ -1,2 +1,9 @@
-[2024-12-28 17:57:37][HAPPY] Window initialised!
-[2024-12-28 17:58:13][HAPPY] Quitting...
+[2024-12-29 22:21:50][HAPPY] Window initialised!
+[2024-12-29 22:21:50][HAPPY] A System has been registered!
+[2024-12-29 22:21:50][HAPPY] A System has been registered!
+[2024-12-29 22:21:50][HAPPY] A System has been registered!
+[2024-12-29 22:21:50][HAPPY] PHYS
+[2024-12-29 22:21:50][HAPPY] CAM
+[2024-12-29 22:21:50][HAPPY] A Shader has been created.
+[2024-12-29 22:21:50][HAPPY] REN
+[2024-12-29 22:21:53][HAPPY] Quitting...

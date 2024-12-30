@@ -12,6 +12,7 @@
 #include "ECS/Components/Gravity.hpp"
 #include "ECS/Systems/PhysicsSystem.hpp"
 #include "ECS/Systems/RenderSystem.hpp"
+#include "Core/Engine.hpp"
 #include <chrono>
 #include <random>
 
@@ -21,61 +22,22 @@
 
 /*
  * TODO:
- * Make all asserts or cerr into Log
- * Add min/max severity to log
- * finish ECS
- * Render System
- * Camera System
- * Add imgui
+ * Transform system and matrix caching
+ * Scene system
+ * Mesh class
+ * Debug system - with imgui
  */
 
-Coordinator coordinator;
+extern Coordinator coordinator;
+
+WindowManager windowManager;
+Engine engine;
 
 int main() {
-    // Init coordinator
-    coordinator.Init();
-
-    WindowManager windowManager;
+	engine.Init();
     windowManager.Init("BlockGame", 1024, 760, 0, 0);
 
-	coordinator.RegisterComponent<Camera>();
-	coordinator.RegisterComponent<Gravity>();
-	coordinator.RegisterComponent<Renderable>();
-	coordinator.RegisterComponent<RigidBody>();
-	coordinator.RegisterComponent<Transform>();
-
-
-	auto physicsSystem = coordinator.RegisterSystem<PhysicsSystem>();
-	{
-		Signature signature;
-		signature.set(coordinator.GetComponentType<Gravity>());
-		signature.set(coordinator.GetComponentType<RigidBody>());
-		signature.set(coordinator.GetComponentType<Transform>());
-		coordinator.SetSystemSignature<PhysicsSystem>(signature);
-	}
-
-	physicsSystem->Init();
-
-	auto cameraSystem = coordinator.RegisterSystem<CameraSystem>();
-	{
-    	Signature signature;
-    	signature.set(coordinator.GetComponentType<Camera>());
-    	signature.set(coordinator.GetComponentType<Transform>());
-    	coordinator.SetSystemSignature<CameraSystem>(signature);
-	}
-
-	cameraSystem->Init();
-
-	auto renderSystem = coordinator.RegisterSystem<RenderSystem>();
-	{
-		Signature signature;
-		signature.set(coordinator.GetComponentType<Renderable>());
-		signature.set(coordinator.GetComponentType<Transform>());
-		coordinator.SetSystemSignature<RenderSystem>(signature);
-	}
-
-	renderSystem->Init();
-
+	engine.Load();
 
 	// Create a single red cube entity
 	auto cubeEntity = coordinator.CreateEntity();
@@ -129,11 +91,7 @@ int main() {
     		col.color.r += speed;
     	}
 
-    	physicsSystem->Update(dt);
-
-    	cameraSystem->Update(dt);
-
-    	renderSystem->Update(dt);
+    	engine.Update(dt);
 
     	windowManager.Update();
 

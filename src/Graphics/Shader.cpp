@@ -79,6 +79,8 @@ Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
 
     glDeleteShader(vertex);
     glDeleteShader(fragment);
+
+    Log::Output(Log::Severity::HAPPY, "A Shader has been created.");
 }
 
 Shader::~Shader() {

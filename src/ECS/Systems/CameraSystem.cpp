@@ -13,6 +13,8 @@
 
 extern Coordinator coordinator;
 
+float sensitivity = 0.2f;
+
 void CameraSystem::Init() {
     coordinator.AddEventListener<InputEvent>(this, &CameraSystem::InputListener);
 }
@@ -72,8 +74,8 @@ void CameraSystem::Update(float dt) {
         // Rotation
         if (mouseDeltaX != 0.0f || mouseDeltaY != 0.0f) {
             // Rotation
-            transform.rotation.x -= mouseDeltaY * 0.5f * dt; // Pitch
-            transform.rotation.y += mouseDeltaX * 0.5f * dt; // Yaw
+            transform.rotation.x -= mouseDeltaY * sensitivity; // Pitch
+            transform.rotation.y += mouseDeltaX * sensitivity; // Yaw
 
             // Clamp pitch to avoid flipping
             transform.rotation.x = glm::clamp(transform.rotation.x, -89.0f, 89.0f);

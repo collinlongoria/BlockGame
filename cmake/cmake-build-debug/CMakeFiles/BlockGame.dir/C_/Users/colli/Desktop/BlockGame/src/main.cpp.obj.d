@@ -465,6 +465,9 @@ CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj: \
  C:/Users/colli/Desktop/BlockGame/include/ECS/System.hpp \
  C:/Users/colli/Desktop/BlockGame/include/ECS/Systems/RenderSystem.hpp \
  C:/Users/colli/Desktop/BlockGame/include/Graphics/Shader.hpp \
+ C:/Users/colli/Desktop/BlockGame/include/Core/Engine.hpp \
+ C:/Users/colli/Desktop/BlockGame/include/ECS/Systems/CameraSystem.hpp \
+ C:/Users/colli/Desktop/BlockGame/include/Core/Input.hpp \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/chrono \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/sstream \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/sstream.tcc \
@@ -493,6 +496,4 @@ CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/random.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/numeric \
  C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_numeric.h \
- C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_numeric_defs.h \
- C:/Users/colli/Desktop/BlockGame/include/ECS/Systems/CameraSystem.hpp \
- C:/Users/colli/Desktop/BlockGame/include/Core/Input.hpp
+ C:/Program\ Files/JetBrains/CLion\ 2024.2.1/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/pstl/glue_numeric_defs.h
