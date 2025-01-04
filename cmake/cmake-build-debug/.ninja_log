@@ -1,0 +1,20 @@
+# ninja log v6
+5	293	7576869356499183	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Core/Math.cpp.obj	1895bee4703c32a5
+17	1579	7576869356624387	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/Shader.cpp.obj	c64269d7ccc38860
+27	1600	7576869356724600	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/glad.c.obj	a1fe172514bc4a0d
+6	1507	7576872232052789	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj	b9b304e8dd3c21ad
+1508	2567	7576872247070904	C:/Users/Collin/Desktop/BlockGame/build/Debug/BlockGame.exe	29e4311d12ff7bfd
+2	1667	7576869356469175	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Core/Log.cpp.obj	861e94c29fe77bc4
+21	1798	7576869356659450	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.obj	488d6acb13df8aef
+7	1923	7576869356524177	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Core/WindowManager.cpp.obj	a3d0a8039116aeb1
+13	1965	7576869356579323	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj	2c038bbcd0276c0c
+15	2267	7576869356604381	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj	4f891a9724830a55
+24	3240	7576869356694600	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/main.cpp.obj	4e4e248cae2d098
+12	1140	7576885248496399	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/Shader.cpp.obj	c64269d7ccc38860
+14	1336	7576885248516401	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.obj	488d6acb13df8aef
+10	1347	7576885248471393	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/MeshManager.cpp.obj	5915559523f1163f
+6	1806	7576885248436316	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj	4f891a9724830a55
+16	2884	7576885248536391	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/main.cpp.obj	4e4e248cae2d098
+2884	4096	7576885277217666	C:/Users/Collin/Desktop/BlockGame/build/Debug/BlockGame.exe	8ba67bb5802142c0
+6	2418	7576885988131199	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/main.cpp.obj	4e4e248cae2d098
+2418	3604	7576886012254725	C:/Users/Collin/Desktop/BlockGame/build/Debug/BlockGame.exe	8ba67bb5802142c0

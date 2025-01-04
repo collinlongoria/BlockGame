@@ -12,6 +12,8 @@
 #include "ECS/Systems/CameraSystem.hpp"
 #include "ECS/Systems/PhysicsSystem.hpp"
 #include "ECS/Systems/RenderSystem.hpp"
+#include "Graphics/MeshManager.hpp"
+#include "Graphics/ShaderManager.hpp"
 
 struct Transform;
 struct RigidBody;
@@ -21,6 +23,10 @@ struct Camera;
 
 // Global ECS coordinator
 inline Coordinator coordinator;
+
+// Global Mesh and Shader managers
+inline ShaderManager shaderManager;
+inline MeshManager meshManager;
 
 class Engine {
 public:

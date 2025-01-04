@@ -84,10 +84,10 @@ Shader::Shader(const std::string &vertexPath, const std::string &fragmentPath) {
 }
 
 Shader::~Shader() {
-
+    glDeleteProgram(program);
 }
 
-void Shader::SetActive() {
+void Shader::Bind() {
     glUseProgram(program);
 }
 

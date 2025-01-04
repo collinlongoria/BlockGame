@@ -16,8 +16,6 @@ public:
     void Update(float dt);
 
 private:
-    std::unique_ptr<Shader> shader;
-
     Entity camera;
 
     GLuint VAO{}, VBO_V{}, VBO_N{};

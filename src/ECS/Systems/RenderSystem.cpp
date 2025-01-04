@@ -8,12 +8,14 @@
 #include "ECS/Components/Camera.hpp"
 #include "ECS/Components/Renderable.hpp"
 #include "ECS/Components/Transform.hpp"
+#include "Graphics/ShaderManager.hpp"
 
 extern Coordinator coordinator;
+extern ShaderManager shaderManager;
 
 void RenderSystem::Init() {
     // create shader
-    shader = std::make_unique<Shader>("shaders/basic.vert", "shaders/basic.frag");
+    //shader = std::make_unique<Shader>("shaders/basic.vert", "shaders/basic.frag");
 
     camera = coordinator.CreateEntity();
 
@@ -110,7 +112,7 @@ void RenderSystem::Update(float dt) {
     //glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    shader->SetActive();
+    //shader->SetActive();
     glBindVertexArray(VAO);
 
     auto& cameraTransform = coordinator.GetComponent<Transform>(camera);
@@ -139,9 +141,13 @@ void RenderSystem::Update(float dt) {
         auto const& transform = coordinator.GetComponent<Transform>(entity);
         auto const& renderable = coordinator.GetComponent<Renderable>(entity);
 
+        auto shader = shaderManager.GetShader(renderable.shaderID);
+
         glm::mat4 model = glm::translate(glm::mat4(1.0f), transform.position) *
                           glm::scale(glm::mat4(1.0f), transform.scale) *
                           glm::yawPitchRoll(transform.rotation.y, transform.rotation.x, transform.rotation.z);
+
+        shader->Bind();
 
         shader->SetUniform("uModel", model);
         shader->SetUniform("uView", view);
@@ -151,5 +157,6 @@ void RenderSystem::Update(float dt) {
         glDrawArrays(GL_TRIANGLES, 0, 36);
     }
 
+    glUseProgram(0);
     glBindVertexArray(0);
 }

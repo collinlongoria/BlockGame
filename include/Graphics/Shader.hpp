@@ -14,7 +14,7 @@ class Shader {
 public:
     Shader(const std::string& vertexPath, const std::string& fragmentPath);
     ~Shader();
-    void SetActive();
+    void Bind();
 
     // Uniform wrapper helper function
     template<typename T>

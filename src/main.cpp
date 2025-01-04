@@ -29,6 +29,7 @@
  */
 
 extern Coordinator coordinator;
+extern ShaderManager shaderManager;
 
 WindowManager windowManager;
 Engine engine;
@@ -38,6 +39,9 @@ int main() {
     windowManager.Init("BlockGame", 1024, 760, 0, 0);
 
 	engine.Load();
+
+	// Load resources
+	shaderManager.AddShader("basic", std::make_unique<Shader>("shaders/basic.vert", "shaders/basic.frag"));
 
 	// Create a single red cube entity
 	auto cubeEntity = coordinator.CreateEntity();
@@ -53,6 +57,7 @@ int main() {
 	coordinator.AddComponent(
 		cubeEntity,
 		Renderable{
+			.shaderID = shaderManager.GetShaderID("basic"),
 			.color = glm::vec3(1.0f, 0.0f, 0.0f) // Red color
 		});
 

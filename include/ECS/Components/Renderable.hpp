@@ -8,6 +8,7 @@
 #include "Core/Math.hpp"
 
 struct Renderable {
+    uint32_t shaderID;
     Vec3 color;
 };
 

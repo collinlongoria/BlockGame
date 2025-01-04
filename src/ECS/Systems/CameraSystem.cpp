@@ -47,8 +47,6 @@ void CameraSystem::Update(float dt) {
         glm::vec3 right = CalculateRight(forward);
         glm::vec3 up = CalculateUp(forward, right);
 
-        std::cout << "Forward: " << forward.x << ", " << forward.y << ", " << forward.z << "\n";
-
         // Z axis (forward/backward)
         if (input.test(static_cast<size_t>(InputType::KeyW))) {
             transform.position += forward * speed * dt; // Move forward
