@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "BlockGame",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -39,8 +41,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "BlockGame::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-BlockGame-Debug-e86e5b8029b1bc8684d4.json",
+					"jsonFile" : "target-BlockGame-Debug-e7647ffb786e612dab5f.json",
 					"name" : "BlockGame",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "copy_resources::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-copy_resources-Debug-038088f59e3dbdd67078.json",
+					"name" : "copy_resources",
 					"projectIndex" : 0
 				}
 			]

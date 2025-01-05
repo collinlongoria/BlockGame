@@ -30,6 +30,7 @@
 
 extern Coordinator coordinator;
 extern ShaderManager shaderManager;
+extern MeshManager meshManager;
 
 WindowManager windowManager;
 Engine engine;
@@ -42,6 +43,7 @@ int main() {
 
 	// Load resources
 	shaderManager.AddShader("basic", std::make_unique<Shader>("shaders/basic.vert", "shaders/basic.frag"));
+	meshManager.AddMesh("teapot", std::make_unique<Mesh>("assets/teapot.obj"));
 
 	// Create a single red cube entity
 	auto cubeEntity = coordinator.CreateEntity();
@@ -58,6 +60,7 @@ int main() {
 		cubeEntity,
 		Renderable{
 			.shaderID = shaderManager.GetShaderID("basic"),
+			.meshID = meshManager.GetMeshID("teapot"),
 			.color = glm::vec3(1.0f, 0.0f, 0.0f) // Red color
 		});
 
@@ -79,9 +82,9 @@ int main() {
 
     	auto& trans = coordinator.GetComponent<Transform>(cubeEntity);
     	auto& col = coordinator.GetComponent<Renderable>(cubeEntity);
-    	trans.rotation.x += 2 * dt;
-    	trans.rotation.y += 3 * dt;
-    	trans.rotation.z *= -1.5 * dt;
+    	//trans.rotation.x += 2 * dt;
+    	//trans.rotation.y += 3 * dt;
+    	//trans.rotation.z *= -1.5 * dt;
 
     	float speed = 0.01f;               // Adjust speed of the color change
 

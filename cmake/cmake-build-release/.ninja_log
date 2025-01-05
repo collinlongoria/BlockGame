@@ -1,0 +1,14 @@
+# ninja log v6
+8	174	7577642448759582	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Core/Math.cpp.obj	3161253f6dfdd07f
+32	1477	7577642449009966	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/glad.c.obj	57b1108d286c86a2
+23	1568	7577642448919774	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/Shader.cpp.obj	4f90fc80a3dc3280
+4	1582	7577642448724569	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Core/Log.cpp.obj	8406698d7f42729b
+26	1619	7577642448944779	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.obj	27cc457c24fd9f43
+20	1654	7577642448894769	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Graphics/MeshManager.cpp.obj	b0060f2cd80c70aa
+10	1777	7577642448789674	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/Core/WindowManager.cpp.obj	6a0cab592089bc7b
+16	1783	7577642448844673	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj	91e87d24b113f359
+13	1876	7577642448819679	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.obj	d0b76d08af9f016d
+18	2250	7577642448869732	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.obj	e65ed4b86b67f6e0
+30	3532	7577642448984917	CMakeFiles/BlockGame.dir/C_/Users/Collin/Desktop/BlockGame/src/main.cpp.obj	3a2719ea20dc4262
+3533	3662	7577642484014746	C:/Users/Collin/Desktop/BlockGame/build/Release/BlockGame.exe	d9a5b9c9ca1423f4
+13	17	7577669103074490	clean	20b1347d9ae3b987

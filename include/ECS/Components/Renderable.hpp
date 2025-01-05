@@ -9,6 +9,7 @@
 
 struct Renderable {
     uint32_t shaderID;
+    uint32_t meshID;
     Vec3 color;
 };
 

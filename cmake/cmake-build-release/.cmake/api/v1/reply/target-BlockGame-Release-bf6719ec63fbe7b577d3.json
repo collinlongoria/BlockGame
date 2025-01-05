@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "C:/Users/Collin/Desktop/BlockGame/build/Debug/BlockGame.exe"
+			"path" : "C:/Users/Collin/Desktop/BlockGame/build/Release/BlockGame.exe"
 		},
 		{
-			"path" : "C:/Users/Collin/Desktop/BlockGame/build/Debug/BlockGame.pdb"
+			"path" : "C:/Users/Collin/Desktop/BlockGame/build/Release/BlockGame.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -15,8 +15,9 @@
 		[
 			"add_executable",
 			"target_link_libraries",
-			"target_compile_definitions",
-			"include_directories"
+			"add_dependencies",
+			"target_compile_options",
+			"target_include_directories"
 		],
 		"files" : 
 		[
@@ -30,31 +31,37 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 24,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 45,
+				"line" : 63,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 54,
+				"line" : 69,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 27,
+				"line" : 121,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 12,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 42,
 				"parent" : 0
 			}
 		]
@@ -65,20 +72,21 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++20 -fdiagnostics-color=always"
-				}
-			],
-			"defines" : 
-			[
+					"fragment" : "-O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always"
+				},
 				{
-					"backtrace" : 4,
-					"define" : "DEBUG_MODE"
+					"backtrace" : 5,
+					"fragment" : "-static-libstdc++"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-static-libgcc"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "C:/Users/Collin/Desktop/BlockGame/cmake/../include"
 				}
 			],
@@ -109,20 +117,21 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fdiagnostics-color=always"
-				}
-			],
-			"defines" : 
-			[
+					"fragment" : "-O3 -DNDEBUG -fdiagnostics-color=always"
+				},
 				{
-					"backtrace" : 4,
-					"define" : "DEBUG_MODE"
+					"backtrace" : 5,
+					"fragment" : "-static-libstdc++"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-static-libgcc"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "C:/Users/Collin/Desktop/BlockGame/cmake/../include"
 				}
 			],
@@ -133,13 +142,20 @@
 			]
 		}
 	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "copy_resources::@6890427a1f51a3e7e1df"
+		}
+	],
 	"id" : "BlockGame::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-O3 -DNDEBUG",
 				"role" : "flags"
 			},
 			{

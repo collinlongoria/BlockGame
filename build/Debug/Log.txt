@@ -1,9 +1,10 @@
-[2025-01-04 02:10:03][HAPPY] Window initialised!
-[2025-01-04 02:10:03][HAPPY] A System has been registered!
-[2025-01-04 02:10:03][HAPPY] A System has been registered!
-[2025-01-04 02:10:03][HAPPY] A System has been registered!
-[2025-01-04 02:10:03][HAPPY] PHYS
-[2025-01-04 02:10:03][HAPPY] CAM
-[2025-01-04 02:10:03][HAPPY] REN
-[2025-01-04 02:10:03][HAPPY] A Shader has been created.
-[2025-01-04 02:10:12][HAPPY] Quitting...
+[2025-01-05 00:38:33][HAPPY] Window initialised!
+[2025-01-05 00:38:33][HAPPY] A System has been registered!
+[2025-01-05 00:38:33][HAPPY] A System has been registered!
+[2025-01-05 00:38:33][HAPPY] A System has been registered!
+[2025-01-05 00:38:33][HAPPY] PHYS
+[2025-01-05 00:38:33][HAPPY] CAM
+[2025-01-05 00:38:33][HAPPY] REN
+[2025-01-05 00:38:33][HAPPY] A Shader has been created.
+[2025-01-05 00:38:33][HAPPY] A mesh has been created
+[2025-01-05 00:39:03][HAPPY] Quitting...

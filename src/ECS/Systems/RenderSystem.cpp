@@ -8,10 +8,12 @@
 #include "ECS/Components/Camera.hpp"
 #include "ECS/Components/Renderable.hpp"
 #include "ECS/Components/Transform.hpp"
+#include "Graphics/MeshManager.hpp"
 #include "Graphics/ShaderManager.hpp"
 
 extern Coordinator coordinator;
 extern ShaderManager shaderManager;
+extern MeshManager meshManager;
 
 void RenderSystem::Init() {
     // create shader
@@ -113,7 +115,7 @@ void RenderSystem::Update(float dt) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     //shader->SetActive();
-    glBindVertexArray(VAO);
+    //glBindVertexArray(VAO);
 
     auto& cameraTransform = coordinator.GetComponent<Transform>(camera);
     auto& cameraCamera = coordinator.GetComponent<Camera>(camera);
@@ -142,6 +144,9 @@ void RenderSystem::Update(float dt) {
         auto const& renderable = coordinator.GetComponent<Renderable>(entity);
 
         auto shader = shaderManager.GetShader(renderable.shaderID);
+        auto mesh = meshManager.GetMesh(renderable.meshID);
+
+        mesh->Bind();
 
         glm::mat4 model = glm::translate(glm::mat4(1.0f), transform.position) *
                           glm::scale(glm::mat4(1.0f), transform.scale) *
@@ -151,10 +156,12 @@ void RenderSystem::Update(float dt) {
 
         shader->SetUniform("uModel", model);
         shader->SetUniform("uView", view);
+        shader->SetUniform("viewPos", cameraTransform.position);
         shader->SetUniform("uProjection", cameraCamera.projectionMatrix);
         shader->SetUniform("uColor", renderable.color);
 
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        mesh->Draw();
+        mesh->Unbind(); // may not be needed?
     }
 
     glUseProgram(0);
