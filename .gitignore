@@ -16,3 +16,5 @@
 # File paths that should be ignored
 **/.idea/
 **/build/
+**/build/Debug/
+**/Build/Release/
