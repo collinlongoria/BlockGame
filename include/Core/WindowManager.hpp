@@ -35,6 +35,7 @@ private:
     GLFWwindow* window;
 
     bool toQuit = false;
+    bool mouseVisible = false;
 
     // Wrapper helper function for updating key log bitfield
     void UpdateInput();

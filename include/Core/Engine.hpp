@@ -12,6 +12,7 @@
 #include "ECS/Systems/CameraSystem.hpp"
 #include "ECS/Systems/PhysicsSystem.hpp"
 #include "ECS/Systems/RenderSystem.hpp"
+#include "ECS/Systems/TransformSystem.hpp"
 #include "Graphics/MeshManager.hpp"
 #include "Graphics/ShaderManager.hpp"
 
@@ -48,6 +49,7 @@ public:
         // Register systems
         // For sure required order: Render -> Transform -> Everything else
         RegisterSystem<RenderSystem, Renderable, Transform>();
+        RegisterSystem<TransformSystem, Transform>();
         RegisterSystem<PhysicsSystem, Transform, RigidBody, Gravity>();
         RegisterSystem<CameraSystem, Transform, Camera>();
 
@@ -55,15 +57,19 @@ public:
         // TODO: find a better way to do this?
         auto physicsSystem = std::static_pointer_cast<PhysicsSystem>(systemMap[typeid(PhysicsSystem)]);
         if(physicsSystem) physicsSystem->Init();
-        Log::Output(Log::Severity::HAPPY, "PHYS");
+        Log::Output(Log::Severity::HAPPY, "PhysicsSystem initialized!");
 
         auto cameraSystem = std::static_pointer_cast<CameraSystem>(systemMap[typeid(CameraSystem)]);
         if(cameraSystem) cameraSystem->Init();
-        Log::Output(Log::Severity::HAPPY, "CAM");
+        Log::Output(Log::Severity::HAPPY, "CameraSystem initialized!");
+
+        auto transformSystem = std::static_pointer_cast<TransformSystem>(systemMap[typeid(TransformSystem)]);
+        if(transformSystem) transformSystem->Init();
+        Log::Output(Log::Severity::HAPPY, "TransformSystem initialized!");
 
         auto renderSystem = std::static_pointer_cast<RenderSystem>(systemMap[typeid(RenderSystem)]);
         if(renderSystem) renderSystem->Init();
-        Log::Output(Log::Severity::HAPPY, "REN");
+        Log::Output(Log::Severity::HAPPY, "RenderSystem initialized!");
     }
 
     // Main loop
@@ -75,6 +81,9 @@ public:
 
         auto cameraSystem = std::static_pointer_cast<CameraSystem>(systemMap[typeid(CameraSystem)]);
         if(cameraSystem) cameraSystem->Update(dt);
+
+        auto transformSystem = std::static_pointer_cast<TransformSystem>(systemMap[typeid(TransformSystem)]);
+        if(transformSystem) transformSystem->Update(dt);
 
         auto renderSystem = std::static_pointer_cast<RenderSystem>(systemMap[typeid(RenderSystem)]);
         if(renderSystem) renderSystem->Update(dt);

@@ -18,6 +18,7 @@ public:
 private:
     std::bitset<static_cast<size_t>(InputType::COUNT)> input;
     float mouseDeltaX, mouseDeltaY;
+    bool mouseVisible;
 
     void InputListener(const InputEvent& event);
 };

@@ -128,6 +128,19 @@ BlockGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/build
 .PHONY : BlockGame/fast
 
+#=============================================================================
+# Target rules for targets named copy_resources
+
+# Build rule for target.
+copy_resources: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 copy_resources
+.PHONY : copy_resources
+
+# fast build rule for target.
+copy_resources/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\copy_resources.dir\build.make CMakeFiles/copy_resources.dir/build
+.PHONY : copy_resources/fast
+
 C_/Users/colli/Desktop/BlockGame/src/Core/Log.obj: C_/Users/colli/Desktop/BlockGame/src/Core/Log.cpp.obj
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/Core/Log.obj
 
@@ -272,6 +285,54 @@ C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.s
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.cpp.s
 
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.i: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.s: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.obj: C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.i: C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.s: C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.cpp.s
+
 C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.obj: C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.obj
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.obj
 
@@ -295,6 +356,30 @@ C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.s: C_/Users/colli/Desktop/B
 C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.s
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.obj: C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.i: C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.s: C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.cpp.s
 
 C_/Users/colli/Desktop/BlockGame/src/glad.obj: C_/Users/colli/Desktop/BlockGame/src/glad.c.obj
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.obj
@@ -352,6 +437,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... copy_resources
 	@echo ... BlockGame
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Log.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/Core/Log.i
@@ -371,9 +457,18 @@ help:
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/RenderSystem.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/TransformSystem.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/MeshManager.s
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/Shader.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/Graphics/ShaderManager.s
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.s

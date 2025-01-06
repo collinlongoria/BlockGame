@@ -19,6 +19,8 @@ enum class InputType {
     KeyD,
     KeySpace,
     KeyLeftCtrl,
+    KeyLeftAlt,
+    KeyTab,
     KeyEscape,
     COUNT
 };
@@ -28,8 +30,10 @@ struct InputEvent : public Event {
     float mouseDeltaX;
     float mouseDeltaY;
 
-    explicit InputEvent(std::bitset<static_cast<size_t>(InputType::COUNT)> _inputs, float dX, float dY)
-        : inputs(_inputs), mouseDeltaX(dX), mouseDeltaY(dY) {}
+    bool mouseVisible;
+
+    explicit InputEvent(std::bitset<static_cast<size_t>(InputType::COUNT)> _inputs, float dX, float dY, bool mv)
+        : inputs(_inputs), mouseDeltaX(dX), mouseDeltaY(dY), mouseVisible(mv) {}
 };
 
 #endif //INPUT_HPP

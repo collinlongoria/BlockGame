@@ -51,10 +51,11 @@ void WindowManager::Init(std::string const &windowName, unsigned int windowWidth
     // Configure OpenGL
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glEnable(GL_DEPTH_TEST);
-    glDisable(GL_CULL_FACE);
+    //glDisable(GL_CULL_FACE);
 
     // Disable cursor
     glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    mouseVisible = false;
 
     // Enable quit event
     coordinator.AddEventListener<QuitEvent>(this, &WindowManager::QuitHandler);
@@ -92,7 +93,8 @@ void WindowManager::ProcessInput() {
     UpdateInput();
 
     // Dispatch if there was any input
-    coordinator.DispatchEvent(InputEvent(input, deltaX, deltaY));
+    // TODO: Only send input event if input has changed
+    coordinator.DispatchEvent(InputEvent(input, deltaX, deltaY, mouseVisible));
 }
 
 void WindowManager::Shutdown() {
@@ -101,38 +103,87 @@ void WindowManager::Shutdown() {
 }
 
 void WindowManager::UpdateInput() {
+
+    // save previous frames input
+    static std::bitset<static_cast<size_t>(InputType::COUNT)> previousInput;
+
     // reset bits
     // maybe bool is faster?
     input.reset();
 
     // Update input states
     if(glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-        coordinator.DispatchEvent(QuitEvent());
+        if (!previousInput.test(static_cast<size_t>(InputType::KeyEscape))) {
+            // Single click events
+            coordinator.DispatchEvent(QuitEvent());
+        }
+        input.set(static_cast<size_t>(InputType::KeyEscape));
     }
-    if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT)) {
+    if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS) {
+       if (!previousInput.test(static_cast<size_t>(InputType::MouseLeft))) {
+           // Single click events
+       }
         input.set(static_cast<size_t>(InputType::MouseLeft));
     }
-    if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT)) {
+    if(glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT) == GLFW_PRESS) {
+        if (!previousInput.test(static_cast<size_t>(InputType::MouseRight))) {
+            // Single click events
+        }
         input.set(static_cast<size_t>(InputType::MouseRight));
     }
     if(glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+       if (!previousInput.test(static_cast<size_t>(InputType::KeyW))) {
+           // Single click events
+       }
         input.set(static_cast<size_t>(InputType::KeyW));
     }
     if(glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+        if (!previousInput.test(static_cast<size_t>(InputType::KeyS))) {
+            // Single click events
+        }
         input.set(static_cast<size_t>(InputType::KeyS));
     }
     if(glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+        if (!previousInput.test(static_cast<size_t>(InputType::KeyA))) {
+            // Single click events
+        }
         input.set(static_cast<size_t>(InputType::KeyA));
     }
     if(glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+        if (!previousInput.test(static_cast<size_t>(InputType::KeyD))) {
+            // Single click events
+        }
         input.set(static_cast<size_t>(InputType::KeyD));
     }
     if(glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS) {
+        if (!previousInput.test(static_cast<size_t>(InputType::KeySpace))) {
+            // Single click events
+        }
         input.set(static_cast<size_t>(InputType::KeySpace));
     }
     if(glfwGetKey(window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
+        if (!previousInput.test(static_cast<size_t>(InputType::KeyLeftCtrl))) {
+            // Single click events
+        }
         input.set(static_cast<size_t>(InputType::KeyLeftCtrl));
     }
+    if(glfwGetKey(window, GLFW_KEY_LEFT_ALT) == GLFW_PRESS) {
+        if (!previousInput.test(static_cast<size_t>(InputType::KeyLeftAlt))) {
+            // Single click events
+            mouseVisible = !mouseVisible;
+            Log::Output(Log::Severity::WARNING, "ALT CLICKED! Mouse set to " + std::to_string(mouseVisible));
+            glfwSetInputMode(window, GLFW_CURSOR, mouseVisible ? GLFW_CURSOR_NORMAL : GLFW_CURSOR_DISABLED);
+        }
+        input.set(static_cast<size_t>(InputType::KeyLeftAlt));
+    }
+    if(glfwGetKey(window, GLFW_KEY_TAB == GLFW_PRESS)) {
+        if (!previousInput.test(static_cast<size_t>(InputType::KeyTab))) {
+            // Single click events
+        }
+        input.set(static_cast<size_t>(InputType::KeyTab));
+    }
+
+    previousInput = input;
 }
 
 

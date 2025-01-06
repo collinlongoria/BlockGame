@@ -17,8 +17,6 @@ public:
 
 private:
     Entity camera;
-
-    GLuint VAO{}, VBO_V{}, VBO_N{};
 };
 
 

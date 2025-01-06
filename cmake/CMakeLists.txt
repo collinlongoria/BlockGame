@@ -11,9 +11,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 # Use a generator expression to handle multi-config (e.g. Debug/Release) in one go
 # This should match wherever you want your exe to land.
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/../build/$<CONFIG>")
-# Or, if you prefer:
-# set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/../build/${CMAKE_BUILD_TYPE}")
-# but that only works in single-config scenarios.
 
 # We'll also store it in a variable for our custom commands
 set(BIN_DIR "${EXECUTABLE_OUTPUT_PATH}")
@@ -63,6 +60,16 @@ set(GLFW_LIB_RELEASE "${LIBRARIES_DIR}/glfw/glfw3.dll")
 target_link_libraries(BlockGame PRIVATE
         $<$<CONFIG:Debug>:${GLFW_LIB_DEBUG}>
         $<$<CONFIG:Release>:${GLFW_LIB_RELEASE}>
+)
+
+# copy .dll files into build folder
+add_custom_command(
+        TARGET BlockGame POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different
+        $<$<CONFIG:Debug>:${GLFW_LIB_DEBUG}>
+        $<$<CONFIG:Release>:${GLFW_LIB_RELEASE}>
+        "${BIN_DIR}/"
+        COMMENT "Copying GLFW DLL to output directory"
 )
 
 find_package(OpenGL REQUIRED)

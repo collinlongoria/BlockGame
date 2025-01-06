@@ -17,6 +17,8 @@ float sensitivity = 0.2f;
 
 void CameraSystem::Init() {
     coordinator.AddEventListener<InputEvent>(this, &CameraSystem::InputListener);
+
+    mouseVisible = false;
 }
 
 glm::vec3 CalculateForward(float yaw, float pitch) {
@@ -47,36 +49,39 @@ void CameraSystem::Update(float dt) {
         glm::vec3 right = CalculateRight(forward);
         glm::vec3 up = CalculateUp(forward, right);
 
-        // Z axis (forward/backward)
-        if (input.test(static_cast<size_t>(InputType::KeyW))) {
-            transform.position += forward * speed * dt; // Move forward
-        }
-        if (input.test(static_cast<size_t>(InputType::KeyS))) {
-            transform.position -= forward * speed * dt; // Move backward
-        }
-        if (input.test(static_cast<size_t>(InputType::KeyA))) {
-            transform.position -= right * speed * dt; // Move left
-        }
-        if (input.test(static_cast<size_t>(InputType::KeyD))) {
-            transform.position += right * speed * dt; // Move right
-        }
+        // Only update camera input if mouse is invisible
+        if(!mouseVisible) {
+            // Z axis (forward/backward)
+            if (input.test(static_cast<size_t>(InputType::KeyW))) {
+                transform.position += forward * speed * dt; // Move forward
+            }
+            if (input.test(static_cast<size_t>(InputType::KeyS))) {
+                transform.position -= forward * speed * dt; // Move backward
+            }
+            if (input.test(static_cast<size_t>(InputType::KeyA))) {
+                transform.position -= right * speed * dt; // Move left
+            }
+            if (input.test(static_cast<size_t>(InputType::KeyD))) {
+                transform.position += right * speed * dt; // Move right
+            }
 
-        // Y axis (up/down)
-        if(input.test(static_cast<size_t>(InputType::KeySpace))) {
-            transform.position.y -= (speed * dt);
-        }
-        else if(input.test(static_cast<size_t>(InputType::KeyLeftCtrl))) {
-            transform.position.y += (speed * dt);
-        }
+            // Y axis (up/down)
+            if(input.test(static_cast<size_t>(InputType::KeySpace))) {
+                transform.position.y -= (speed * dt);
+            }
+            else if(input.test(static_cast<size_t>(InputType::KeyLeftCtrl))) {
+                transform.position.y += (speed * dt);
+            }
 
-        // Rotation
-        if (mouseDeltaX != 0.0f || mouseDeltaY != 0.0f) {
             // Rotation
-            transform.rotation.x -= mouseDeltaY * sensitivity; // Pitch
-            transform.rotation.y += mouseDeltaX * sensitivity; // Yaw
+            if (mouseDeltaX != 0.0f || mouseDeltaY != 0.0f) {
+                // Rotation
+                transform.rotation.x -= mouseDeltaY * sensitivity; // Pitch
+                transform.rotation.y += mouseDeltaX * sensitivity; // Yaw
 
-            // Clamp pitch to avoid flipping
-            transform.rotation.x = glm::clamp(transform.rotation.x, -89.0f, 89.0f);
+                // Clamp pitch to avoid flipping
+                transform.rotation.x = glm::clamp(transform.rotation.x, -89.0f, 89.0f);
+            }
         }
     }
 }
@@ -85,6 +90,7 @@ void CameraSystem::InputListener(const InputEvent &event) {
     input = event.inputs;
     mouseDeltaX = event.mouseDeltaX;
     mouseDeltaY = event.mouseDeltaY;
+    mouseVisible = event.mouseVisible;
 }
 
 

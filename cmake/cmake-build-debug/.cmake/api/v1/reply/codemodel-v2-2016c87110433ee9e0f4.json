@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
@@ -20,7 +20,7 @@
 					]
 				}
 			],
-			"name" : "Release",
+			"name" : "Debug",
 			"projects" : 
 			[
 				{
@@ -41,14 +41,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "BlockGame::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-BlockGame-Release-bf6719ec63fbe7b577d3.json",
+					"jsonFile" : "target-BlockGame-Debug-43593b18dfa10726cb3f.json",
 					"name" : "BlockGame",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "copy_resources::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-copy_resources-Release-031065864c02b09ba9e0.json",
+					"jsonFile" : "target-copy_resources-Debug-551b5d2b1f90eeedbf41.json",
 					"name" : "copy_resources",
 					"projectIndex" : 0
 				}
@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/Collin/Desktop/BlockGame/cmake/cmake-build-release",
-		"source" : "C:/Users/Collin/Desktop/BlockGame/cmake"
+		"build" : "C:/Users/colli/Desktop/BlockGame/cmake/cmake-build-debug",
+		"source" : "C:/Users/colli/Desktop/BlockGame/cmake"
 	},
 	"version" : 
 	{

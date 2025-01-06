@@ -16,8 +16,6 @@ extern ShaderManager shaderManager;
 extern MeshManager meshManager;
 
 void RenderSystem::Init() {
-    // create shader
-    //shader = std::make_unique<Shader>("shaders/basic.vert", "shaders/basic.frag");
 
     camera = coordinator.CreateEntity();
 
@@ -35,87 +33,10 @@ void RenderSystem::Init() {
         }
         );
 
-    // Define vertex data
-    std::vector<glm::vec3> vertices = {
-        // +Z face (front)
-        {-0.5f, -0.5f, +0.5f}, {+0.5f, -0.5f, +0.5f}, {+0.5f, +0.5f, +0.5f},
-        {+0.5f, +0.5f, +0.5f}, {-0.5f, +0.5f, +0.5f}, {-0.5f, -0.5f, +0.5f},
-
-        // -Z face (back)
-        {-0.5f, -0.5f, -0.5f}, {+0.5f, -0.5f, -0.5f}, {+0.5f, +0.5f, -0.5f},
-        {+0.5f, +0.5f, -0.5f}, {-0.5f, +0.5f, -0.5f}, {-0.5f, -0.5f, -0.5f},
-
-        // +X face (right)
-        {+0.5f, -0.5f, +0.5f}, {+0.5f, -0.5f, -0.5f}, {+0.5f, +0.5f, -0.5f},
-        {+0.5f, +0.5f, -0.5f}, {+0.5f, +0.5f, +0.5f}, {+0.5f, -0.5f, +0.5f},
-
-        // -X face (left)
-        {-0.5f, -0.5f, +0.5f}, {-0.5f, -0.5f, -0.5f}, {-0.5f, +0.5f, -0.5f},
-        {-0.5f, +0.5f, -0.5f}, {-0.5f, +0.5f, +0.5f}, {-0.5f, -0.5f, +0.5f},
-
-        // +Y face (top)
-        {-0.5f, +0.5f, +0.5f}, {+0.5f, +0.5f, +0.5f}, {+0.5f, +0.5f, -0.5f},
-        {+0.5f, +0.5f, -0.5f}, {-0.5f, +0.5f, -0.5f}, {-0.5f, +0.5f, +0.5f},
-
-        // -Y face (bottom)
-        {-0.5f, -0.5f, +0.5f}, {+0.5f, -0.5f, +0.5f}, {+0.5f, -0.5f, -0.5f},
-        {+0.5f, -0.5f, -0.5f}, {-0.5f, -0.5f, -0.5f}, {-0.5f, -0.5f, +0.5f}
-    };
-
-    // Simplified normal data setup for brevity
-    std::vector<glm::vec3> normals = {
-        // +Z face
-        { 0.0f,  0.0f, +1.0f}, { 0.0f,  0.0f, +1.0f}, { 0.0f,  0.0f, +1.0f},
-        { 0.0f,  0.0f, +1.0f}, { 0.0f,  0.0f, +1.0f}, { 0.0f,  0.0f, +1.0f},
-
-        // -Z face
-        { 0.0f,  0.0f, -1.0f}, { 0.0f,  0.0f, -1.0f}, { 0.0f,  0.0f, -1.0f},
-        { 0.0f,  0.0f, -1.0f}, { 0.0f,  0.0f, -1.0f}, { 0.0f,  0.0f, -1.0f},
-
-        // +X face
-        {+1.0f,  0.0f,  0.0f}, {+1.0f,  0.0f,  0.0f}, {+1.0f,  0.0f,  0.0f},
-        {+1.0f,  0.0f,  0.0f}, {+1.0f,  0.0f,  0.0f}, {+1.0f,  0.0f,  0.0f},
-
-        // -X face
-        {-1.0f,  0.0f,  0.0f}, {-1.0f,  0.0f,  0.0f}, {-1.0f,  0.0f,  0.0f},
-        {-1.0f,  0.0f,  0.0f}, {-1.0f,  0.0f,  0.0f}, {-1.0f,  0.0f,  0.0f},
-
-        // +Y face
-        { 0.0f, +1.0f,  0.0f}, { 0.0f, +1.0f,  0.0f}, { 0.0f, +1.0f,  0.0f},
-        { 0.0f, +1.0f,  0.0f}, { 0.0f, +1.0f,  0.0f}, { 0.0f, +1.0f,  0.0f},
-
-        // -Y face
-        { 0.0f, -1.0f,  0.0f}, { 0.0f, -1.0f,  0.0f}, { 0.0f, -1.0f,  0.0f},
-        { 0.0f, -1.0f,  0.0f}, { 0.0f, -1.0f,  0.0f}, { 0.0f, -1.0f,  0.0f}
-    };
-
-    // VAO, VBO setup
-    glGenVertexArrays(1, &VAO);
-    glBindVertexArray(VAO);
-
-    // Vertices
-    glGenBuffers(1, &VBO_V);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO_V);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec3) * vertices.size(), vertices.data(), GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), (void*)nullptr);
-    glEnableVertexAttribArray(0);
-
-    // Normals
-    glGenBuffers(1, &VBO_N);
-    glBindBuffer(GL_ARRAY_BUFFER, VBO_N);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(glm::vec3) * normals.size(), normals.data(), GL_STATIC_DRAW);
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(glm::vec3), (void*)nullptr);
-    glEnableVertexAttribArray(1);
-
-    glBindVertexArray(0);
 }
 
 void RenderSystem::Update(float dt) {
-    //glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    //shader->SetActive();
-    //glBindVertexArray(VAO);
 
     auto& cameraTransform = coordinator.GetComponent<Transform>(camera);
     auto& cameraCamera = coordinator.GetComponent<Camera>(camera);
@@ -148,12 +69,11 @@ void RenderSystem::Update(float dt) {
 
         mesh->Bind();
 
-        glm::mat4 model = glm::translate(glm::mat4(1.0f), transform.position) *
-                          glm::scale(glm::mat4(1.0f), transform.scale) *
-                          glm::yawPitchRoll(transform.rotation.y, transform.rotation.x, transform.rotation.z);
+        Mat4 model = transform.matrix;
 
         shader->Bind();
 
+        // TODO: smarter system for Uniforms
         shader->SetUniform("uModel", model);
         shader->SetUniform("uView", view);
         shader->SetUniform("viewPos", cameraTransform.position);
