@@ -13,5 +13,6 @@
 *.out
 *.app
 
-# fuck if i know
+# File paths that should be ignored
 **/.idea/
+**/build/
