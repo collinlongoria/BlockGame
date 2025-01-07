@@ -16,5 +16,5 @@
 **/.idea/
 **/build/
 **/build/Debug/
-**/Build/Release/
+**/build/Release/
 **/cmake/cmake-build-debug/CMakeFiles/BlockGame.dir

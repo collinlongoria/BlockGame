@@ -37,19 +37,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 60,
+				"line" : 63,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 76,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 128,
+				"line" : 131,
 				"parent" : 0
 			},
 			{
@@ -62,6 +62,12 @@
 				"command" : 4,
 				"file" : 0,
 				"line" : 39,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 42,
 				"parent" : 0
 			}
 		]
@@ -88,6 +94,10 @@
 				{
 					"backtrace" : 6,
 					"path" : "C:/Users/colli/Desktop/BlockGame/cmake/../include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/Users/colli/Desktop/BlockGame/cmake/../include/imgui"
 				}
 			],
 			"language" : "CXX",
@@ -134,6 +144,10 @@
 				{
 					"backtrace" : 6,
 					"path" : "C:/Users/colli/Desktop/BlockGame/cmake/../include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/Users/colli/Desktop/BlockGame/cmake/../include/imgui"
 				}
 			],
 			"language" : "C",
@@ -530,7 +544,19 @@
 				328,
 				329,
 				330,
-				331
+				331,
+				332,
+				333,
+				334,
+				335,
+				336,
+				337,
+				338,
+				339,
+				340,
+				341,
+				342,
+				343
 			]
 		}
 	],
@@ -676,6 +702,66 @@
 		{
 			"backtrace" : 1,
 			"path" : "C:/Users/colli/Desktop/BlockGame/include/glm/simd/vector_relational.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/backends/imgui_impl_glfw.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/backends/imgui_impl_opengl3.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/backends/imgui_impl_opengl3_loader.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/imconfig.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/imgui.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/imgui_internal.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/imstb_rectpack.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/imstb_textedit.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/imstb_truetype.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/misc/cpp/imgui_stdlib.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/misc/freetype/imgui_freetype.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/imgui/misc/single_file/imgui_single_file.h",
 			"sourceGroupIndex" : 1
 		},
 		{

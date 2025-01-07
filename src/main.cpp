@@ -16,6 +16,10 @@
 #include <chrono>
 #include <random>
 
+#include "imgui/imgui.h"
+#include "imgui/backends/imgui_impl_opengl3.h"
+#include "imgui/backends/imgui_impl_glfw.h"
+
 #include "Core/WindowManager.hpp"
 #include "ECS/Systems/CameraSystem.hpp"
 
@@ -80,6 +84,28 @@ int main() {
 
     	windowManager.ProcessInput();
 
+    	// 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
+	    {
+        	static float f = 0.0f;
+        	static int counter = 0;
+
+        	// Start the Dear ImGui frame
+        	ImGui_ImplOpenGL3_NewFrame();
+        	ImGui_ImplGlfw_NewFrame();
+        	ImGui::NewFrame();
+
+        	ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+
+        	ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
+
+        	if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+        		counter++;
+        	ImGui::SameLine();
+        	ImGui::Text("counter = %d", counter);
+
+        	ImGui::End();
+	    }
+
     	auto& trans = coordinator.GetComponent<Transform>(cubeEntity);
     	auto& col = coordinator.GetComponent<Renderable>(cubeEntity);
     	//trans.rotation.x += 2 * dt;
@@ -103,11 +129,19 @@ int main() {
 
     	windowManager.Update();
 
+    	ImGui::Render();
+    	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
         auto stop = std::chrono::high_resolution_clock::now();
 
         // calculate delta time
         dt = std::chrono::duration<float, std::chrono::seconds::period>(stop - start).count();
     }
+
+	// Cleanup
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
 
     windowManager.Shutdown();
 

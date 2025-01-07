@@ -82,12 +82,12 @@ clean: CMakeFiles/copy_resources.dir/clean
 CMakeFiles/BlockGame.dir/all: CMakeFiles/copy_resources.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13 "Built target BlockGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 "Built target BlockGame"
 .PHONY : CMakeFiles/BlockGame.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/BlockGame.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-debug\CMakeFiles 14
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-debug\CMakeFiles 21
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/BlockGame.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/BlockGame.dir/rule
@@ -108,7 +108,7 @@ CMakeFiles/BlockGame.dir/clean:
 CMakeFiles/copy_resources.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\copy_resources.dir\build.make CMakeFiles/copy_resources.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\copy_resources.dir\build.make CMakeFiles/copy_resources.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-debug\CMakeFiles --progress-num=14 "Built target copy_resources"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\colli\Desktop\BlockGame\cmake\cmake-build-debug\CMakeFiles --progress-num=21 "Built target copy_resources"
 .PHONY : CMakeFiles/copy_resources.dir/all
 
 # Build rule for subdir invocation for target.

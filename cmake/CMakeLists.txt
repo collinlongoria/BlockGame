@@ -38,6 +38,10 @@ add_executable(BlockGame ${SOURCES})
 target_compile_options(BlockGame PRIVATE -static-libstdc++ -static-libgcc)
 target_include_directories(BlockGame PRIVATE "${CMAKE_SOURCE_DIR}/../include")
 
+# add this one for imgui
+target_include_directories(BlockGame PRIVATE "${CMAKE_SOURCE_DIR}/../include/imgui")
+target_include_directories(BlockGame PRIVATE "${CMAKE_SOURCE_DIR}/../include/imgui/backends")
+
 target_compile_definitions(BlockGame
         PRIVATE
         $<$<CONFIG:Debug>:DEBUG_MODE>

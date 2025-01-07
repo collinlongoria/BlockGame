@@ -4,6 +4,9 @@
 
 #include "Core/WindowManager.hpp"
 
+#include "imgui.h"
+#include "backends/imgui_impl_glfw.h"
+#include "backends/imgui_impl_opengl3.h"
 #include "ECS/Coordinator.hpp"
 
 extern Coordinator coordinator;
@@ -59,6 +62,16 @@ void WindowManager::Init(std::string const &windowName, unsigned int windowWidth
 
     // Enable quit event
     coordinator.AddEventListener<QuitEvent>(this, &WindowManager::QuitHandler);
+
+    // Setup Dear ImGui context
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
+
+    // Setup Platform/Renderer backends
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init("#version 460");
 
     Log::Output(Log::Severity::HAPPY, "Window initialised!");
 }
