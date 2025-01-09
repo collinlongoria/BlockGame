@@ -54,6 +54,8 @@ void WindowManager::Init(std::string const &windowName, unsigned int windowWidth
     // Configure OpenGL
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     //glDisable(GL_CULL_FACE);
 
     // Disable cursor
@@ -77,6 +79,10 @@ void WindowManager::Init(std::string const &windowName, unsigned int windowWidth
 }
 
 void WindowManager::Update() {
+    // render imgui panels
+    ImGui::Render();
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
     glfwSwapBuffers(window);
 }
 
@@ -111,11 +117,25 @@ void WindowManager::ProcessInput() {
 }
 
 void WindowManager::Shutdown() {
+
+    // imgui
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
+
+    // glfw
     glfwDestroyWindow(window);
     glfwTerminate();
 }
 
 void WindowManager::UpdateInput() {
+
+    // putting this here because this function is called prior to other systems
+    // TODO: move to it's own function
+    // Start the Dear ImGui frame
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
 
     // save previous frames input
     static std::bitset<static_cast<size_t>(InputType::COUNT)> previousInput;

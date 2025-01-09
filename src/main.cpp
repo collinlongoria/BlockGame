@@ -26,10 +26,14 @@
 
 /*
  * TODO:
- * Transform system and matrix caching
  * Scene system
- * Mesh class
- * Debug system - with imgui
+ * Collision System and Sphere, Box, Capsule components
+ * Behavior Component (Scriptable)
+ * Block Structure
+ * Chunk Structure
+ * Subchunk Mesh Generation
+ * Noise Generation
+ * Serializer/Deserializer
  */
 
 extern Coordinator coordinator;
@@ -84,28 +88,6 @@ int main() {
 
     	windowManager.ProcessInput();
 
-    	// 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
-	    {
-        	static float f = 0.0f;
-        	static int counter = 0;
-
-        	// Start the Dear ImGui frame
-        	ImGui_ImplOpenGL3_NewFrame();
-        	ImGui_ImplGlfw_NewFrame();
-        	ImGui::NewFrame();
-
-        	ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-        	ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-
-        	if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-        		counter++;
-        	ImGui::SameLine();
-        	ImGui::Text("counter = %d", counter);
-
-        	ImGui::End();
-	    }
-
     	auto& trans = coordinator.GetComponent<Transform>(cubeEntity);
     	auto& col = coordinator.GetComponent<Renderable>(cubeEntity);
     	//trans.rotation.x += 2 * dt;
@@ -127,10 +109,22 @@ int main() {
 
     	engine.Update(dt);
 
-    	windowManager.Update();
+	    {
+        	static int counter = 0;
 
-    	ImGui::Render();
-    	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+		    ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
+
+        	ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
+
+        	if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
+        		counter++;
+        	ImGui::SameLine();
+        	ImGui::Text("counter = %d", counter);
+
+        	ImGui::End();
+	    }
+
+    	windowManager.Update();
 
         auto stop = std::chrono::high_resolution_clock::now();
 
@@ -139,10 +133,6 @@ int main() {
     }
 
 	// Cleanup
-	ImGui_ImplOpenGL3_Shutdown();
-	ImGui_ImplGlfw_Shutdown();
-	ImGui::DestroyContext();
-
     windowManager.Shutdown();
 
     return EXIT_SUCCESS;
