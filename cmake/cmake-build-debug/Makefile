@@ -237,6 +237,30 @@ C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s
 
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.i: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.s: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s
+
 C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj
 
@@ -619,6 +643,9 @@ help:
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.s
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.s

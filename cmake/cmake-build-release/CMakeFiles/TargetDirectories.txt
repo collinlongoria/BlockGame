@@ -1,4 +1,4 @@
-C:/Users/Collin/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/BlockGame.dir
-C:/Users/Collin/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/copy_resources.dir
-C:/Users/Collin/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/edit_cache.dir
-C:/Users/Collin/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/rebuild_cache.dir
+C:/Users/colli/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/BlockGame.dir
+C:/Users/colli/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/copy_resources.dir
+C:/Users/colli/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Users/colli/Desktop/BlockGame/cmake/cmake-build-release/CMakeFiles/rebuild_cache.dir

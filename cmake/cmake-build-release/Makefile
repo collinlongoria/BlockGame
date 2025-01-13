@@ -237,6 +237,30 @@ C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.cpp.s
 
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.i: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.s: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.cpp.s
+
 C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj: C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.cpp.obj
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj
 
@@ -405,6 +429,174 @@ C_/Users/colli/Desktop/BlockGame/src/glad.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/glad.c.s
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/glad.c.s
 
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.obj: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.i: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.s: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.obj: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.i: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.s: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.obj: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.i: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.s: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.obj: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.i: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.s: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.obj: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.i: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.s: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.obj: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.i: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.s: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.cpp.s
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.obj: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.obj
+
+# target to build an object file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.obj
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.obj
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.i: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.i
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.i
+
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.s: C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\BlockGame.dir\build.make CMakeFiles/BlockGame.dir/C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.s
+.PHONY : C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.cpp.s
+
 C_/Users/colli/Desktop/BlockGame/src/main.obj: C_/Users/colli/Desktop/BlockGame/src/main.cpp.obj
 .PHONY : C_/Users/colli/Desktop/BlockGame/src/main.obj
 
@@ -451,6 +643,9 @@ help:
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/CameraSystem.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/ChunkSystem.s
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/ECS/Systems/PhysicsSystem.s
@@ -472,6 +667,27 @@ help:
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/glad.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_demo.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_draw.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_glfw.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_impl_opengl3.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_tables.s
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.obj
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.i
+	@echo ... C_/Users/colli/Desktop/BlockGame/src/imgui/imgui_widgets.s
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/main.obj
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/main.i
 	@echo ... C_/Users/colli/Desktop/BlockGame/src/main.s

@@ -81,6 +81,8 @@ int main() {
 		RigidBody{});
 
     float dt = 0.0f;
+	int fps = 0;
+	float updateFpsTimer = 10.0f;
 
     // Main loop
     while(!windowManager.Quit()) {
@@ -109,17 +111,14 @@ int main() {
 
     	engine.Update(dt);
 
-	    {
-        	static int counter = 0;
+    	if(updateFpsTimer > 2.0f) {
+    		updateFpsTimer = 0.0f;
+    		fps = static_cast<int>(1.0f / dt);
+    	}
+		{
+		    ImGui::Begin("Program Info");
 
-		    ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-
-        	ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-
-        	if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-        		counter++;
-        	ImGui::SameLine();
-        	ImGui::Text("counter = %d", counter);
+        	ImGui::Text("FPS: %d", fps);
 
         	ImGui::End();
 	    }
@@ -130,6 +129,7 @@ int main() {
 
         // calculate delta time
         dt = std::chrono::duration<float, std::chrono::seconds::period>(stop - start).count();
+    	updateFpsTimer += dt;
     }
 
 	// Cleanup
