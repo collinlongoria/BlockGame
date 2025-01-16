@@ -609,9 +609,7 @@
 				350,
 				351,
 				352,
-				353,
-				354,
-				355
+				353
 			]
 		}
 	],
@@ -914,7 +912,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "C:/Users/colli/Desktop/BlockGame/include/ECS/Components/ChunkComponent.hpp",
+			"path" : "C:/Users/colli/Desktop/BlockGame/include/ECS/Components/Chunk.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -995,16 +993,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "C:/Users/colli/Desktop/BlockGame/include/ECS/Systems/TransformSystem.hpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "C:/Users/colli/Desktop/BlockGame/include/Game/Block.hpp",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"path" : "C:/Users/colli/Desktop/BlockGame/include/Game/Chunk.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{

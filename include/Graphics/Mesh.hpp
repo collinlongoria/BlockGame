@@ -12,6 +12,40 @@
 #include "Core/Math.hpp"
 #include "glad/glad.h"
 
+// Useful definitions related to mesh generation
+static const Vec3 FACE_DIRS[6] {
+    {1,0,0},
+    {-1,0,0},
+    {0,1,0},
+    {0,-1,0},
+    {0,0,1},
+    {0,0,-1}
+};
+
+static const Vec3 FACE_NORMALS[6] {
+    {1,0,0},
+    {-1,0,0},
+    {0,1,0},
+    {0,-1,0},
+    {0,0,1},
+    {0,0,-1}
+};
+
+static const Vec3 FACE_VERT_OFFSETS[6][4] {
+    // +X
+    {{1,0,0},{1,1,0},{1,1,1},{1,0,1}},
+    // -X
+    {{0,0,1},{0,1,1},{0,1,0},{0,0,0}},
+    // +Y
+    {{0,1,0},{1,1,0},{1,1,1},{0,1,1}},
+    // -Y
+    {{0,0,1},{1,0,1},{1,0,0},{0,0,0}},
+    // +Z
+    {{0,0,1},{0,1,1},{1,1,1},{1,0,1}},
+    // -Z
+    {{1,0,0},{1,1,0},{0,1,0},{0,0,0}}
+};
+
 class Mesh {
 public:
     // Constructor
