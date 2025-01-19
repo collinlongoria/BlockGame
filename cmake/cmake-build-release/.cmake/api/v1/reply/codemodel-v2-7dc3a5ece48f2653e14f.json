@@ -41,7 +41,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "BlockGame::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-BlockGame-Release-ed8d60e4ad6963f0b80c.json",
+					"jsonFile" : "target-BlockGame-Release-7bc780edea3e499f711e.json",
 					"name" : "BlockGame",
 					"projectIndex" : 0
 				},
@@ -58,8 +58,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/colli/Desktop/BlockGame/cmake/cmake-build-release",
-		"source" : "C:/Users/colli/Desktop/BlockGame/cmake"
+		"build" : "C:/Users/Collin/Desktop/BlockGame/cmake/cmake-build-release",
+		"source" : "C:/Users/Collin/Desktop/BlockGame/cmake"
 	},
 	"version" : 
 	{

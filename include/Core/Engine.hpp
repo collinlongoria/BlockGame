@@ -9,7 +9,9 @@
 
 #include "ECS/Coordinator.hpp"
 #include "ECS/System.hpp"
+#include "ECS/Components/Chunk.hpp"
 #include "ECS/Systems/CameraSystem.hpp"
+#include "ECS/Systems/ChunkSystem.hpp"
 #include "ECS/Systems/PhysicsSystem.hpp"
 #include "ECS/Systems/RenderSystem.hpp"
 #include "ECS/Systems/TransformSystem.hpp"
@@ -45,11 +47,13 @@ public:
         coordinator.RegisterComponent<Renderable>();
         coordinator.RegisterComponent<RigidBody>();
         coordinator.RegisterComponent<Transform>();
+        coordinator.RegisterComponent<Chunk>();
 
         // Register systems
         // For sure required order: Render -> Transform -> Everything else
         RegisterSystem<RenderSystem, Renderable, Transform>();
         RegisterSystem<TransformSystem, Transform>();
+        RegisterSystem<ChunkSystem, Chunk, Renderable>();
         RegisterSystem<PhysicsSystem, Transform, RigidBody, Gravity>();
         RegisterSystem<CameraSystem, Transform, Camera>();
 
@@ -62,6 +66,10 @@ public:
         auto cameraSystem = std::static_pointer_cast<CameraSystem>(systemMap[typeid(CameraSystem)]);
         if(cameraSystem) cameraSystem->Init();
         Log::Output(Log::Severity::HAPPY, "CameraSystem initialized!");
+
+        auto chunkSystem = std::static_pointer_cast<ChunkSystem>(systemMap[typeid(ChunkSystem)]);
+        if(chunkSystem) chunkSystem->Init();
+        Log::Output(Log::Severity::HAPPY, "ChunkSystem initialized!");
 
         auto transformSystem = std::static_pointer_cast<TransformSystem>(systemMap[typeid(TransformSystem)]);
         if(transformSystem) transformSystem->Init();
@@ -81,6 +89,9 @@ public:
 
         auto cameraSystem = std::static_pointer_cast<CameraSystem>(systemMap[typeid(CameraSystem)]);
         if(cameraSystem) cameraSystem->Update(dt);
+
+        auto chunkSystem = std::static_pointer_cast<ChunkSystem>(systemMap[typeid(ChunkSystem)]);
+        if(chunkSystem) chunkSystem->Update(dt);
 
         auto transformSystem = std::static_pointer_cast<TransformSystem>(systemMap[typeid(TransformSystem)]);
         if(transformSystem) transformSystem->Update(dt);

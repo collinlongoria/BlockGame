@@ -30,6 +30,7 @@ struct Block {
     Block() : type(BlockType::Air), lightLevel(0) {}
 };
 
+// Actual component to be attached to entities
 struct Chunk {
     // 3D Array representation of chunk data
     std::vector<Block> blocks;
@@ -43,7 +44,7 @@ struct Chunk {
         blocks.resize(CHUNK_SIZE_X * CHUNK_SIZE_Y * CHUNK_SIZE_Z, Block());
 
         // Set all to dirty
-        flags = std::bitset<NUM_SUBCHUNKS>(1);
+        flags.set();
     }
 };
 
@@ -87,7 +88,7 @@ void SetBlock(Chunk& chunk, int x, int y, int z, BlockType type) {
 bool IsAirOrOutOfBounds(const Chunk& chunk, int nx, int ny, int nz) {
     if(nx < 0 || nx >= CHUNK_SIZE_X ||
         ny < 0 || ny >= CHUNK_SIZE_Y ||
-        nz < 0 || nz >= CHUNK_SIZE_Z ||) {
+        nz < 0 || nz >= CHUNK_SIZE_Z ) {
         return true;
     }
 

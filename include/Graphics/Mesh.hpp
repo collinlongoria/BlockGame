@@ -12,40 +12,6 @@
 #include "Core/Math.hpp"
 #include "glad/glad.h"
 
-// Useful definitions related to mesh generation
-static const Vec3 FACE_DIRS[6] {
-    {1,0,0},
-    {-1,0,0},
-    {0,1,0},
-    {0,-1,0},
-    {0,0,1},
-    {0,0,-1}
-};
-
-static const Vec3 FACE_NORMALS[6] {
-    {1,0,0},
-    {-1,0,0},
-    {0,1,0},
-    {0,-1,0},
-    {0,0,1},
-    {0,0,-1}
-};
-
-static const Vec3 FACE_VERT_OFFSETS[6][4] {
-    // +X
-    {{1,0,0},{1,1,0},{1,1,1},{1,0,1}},
-    // -X
-    {{0,0,1},{0,1,1},{0,1,0},{0,0,0}},
-    // +Y
-    {{0,1,0},{1,1,0},{1,1,1},{0,1,1}},
-    // -Y
-    {{0,0,1},{1,0,1},{1,0,0},{0,0,0}},
-    // +Z
-    {{0,0,1},{0,1,1},{1,1,1},{1,0,1}},
-    // -Z
-    {{1,0,0},{1,1,0},{0,1,0},{0,0,0}}
-};
-
 class Mesh {
 public:
     // Constructor
@@ -61,13 +27,53 @@ public:
         LoadMesh(filename);
     }
 
+    // Default constructor (no data)
+    Mesh() = default;
+
+    // Copy/Move operations
+    Mesh(const Mesh&) = delete;
+    Mesh& operator=(const Mesh&) = delete;
+    Mesh(Mesh&& other) noexcept { MoveFrom(std::move(other)); }
+    Mesh& operator=(Mesh&& other) noexcept {
+        if(this != &other) {
+            Destroy();
+            MoveFrom(std::move(other));
+        }
+        return *this;
+    }
+
     // Deconstructor
     ~Mesh() {
-        glDeleteBuffers(1, &VBO_V);
-        glDeleteBuffers(1, &VBO_N);
-        glDeleteBuffers(1, &VBO_UV);
-        glDeleteBuffers(1, &EBO);
-        glDeleteVertexArrays(1, &VAO);
+        Destroy();
+    }
+
+    // Update mesh buffers with new data
+    void Update(const std::vector<Vec3>& vertices,
+                const std::vector<Vec3>& normals,
+                const std::vector<Vec2>& uvs,
+                const std::vector<unsigned int>& indices) {
+        glBindVertexArray(VAO);
+
+        // Update Vertices
+        glBindBuffer(GL_ARRAY_BUFFER, VBO_V);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(Vec3)*vertices.size(), vertices.data(), GL_STATIC_DRAW);
+
+        // Update Normals
+        glBindBuffer(GL_ARRAY_BUFFER, VBO_N);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(Vec3)*normals.size(), normals.data(), GL_STATIC_DRAW);
+
+        // Update UV
+        glBindBuffer(GL_ARRAY_BUFFER, VBO_UV);
+        glBufferData(GL_ARRAY_BUFFER, sizeof(Vec2)*uvs.size(), uvs.data(), GL_STATIC_DRAW);
+
+        // Update EBO
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(unsigned int)*indices.size(), indices.data(), GL_STATIC_DRAW);
+
+        glBindVertexArray(0);
+
+        // Store indice count
+        indicesCount = static_cast<GLsizei>(indices.size());
     }
 
     // Binds the mesh for use
@@ -129,6 +135,26 @@ private:
         glBindVertexArray(0);
 
         Log::Output(Log::Severity::HAPPY, "A mesh has been created");
+    }
+
+    // Destroy a mesh
+    void Destroy() {
+        if(VBO_V) glDeleteBuffers(1, &VBO_V);
+        if(VBO_N) glDeleteBuffers(1, &VBO_N);
+        if(VBO_UV) glDeleteBuffers(1, &VBO_UV);
+        if(EBO) glDeleteBuffers(1, &EBO);
+        if(VAO) glDeleteVertexArrays(1, &VAO);
+    }
+
+    // Move function
+    void MoveFrom(Mesh&& other) {
+        VAO = other.VAO;    other.VAO = 0;
+        VBO_V = other.VBO_V; other.VBO_V = 0;
+        VBO_N = other.VBO_N; other.VBO_N = 0;
+        VBO_UV = other.VBO_UV; other.VBO_UV = 0;
+        EBO = other.EBO;    other.EBO = 0;
+        indicesCount = other.indicesCount;
+        other.indicesCount = 0;
     }
 
     // Computes normals if OBJ has none

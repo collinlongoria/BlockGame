@@ -26,12 +26,12 @@
 
 /*
  * TODO:
+ *	SUPER IMPORTANT: chunk system doesnt actually handle the fact it needs multiple meshes.
+ *	need a solution to that.
+ *
  * Scene system
  * Collision System and Sphere, Box, Capsule components
  * Behavior Component (Scriptable)
- * Block Structure
- * Chunk Structure
- * Subchunk Mesh Generation
  * Noise Generation
  * Serializer/Deserializer
  */

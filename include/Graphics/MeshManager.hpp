@@ -19,6 +19,9 @@ public:
 
     uint32_t GetMeshID(const std::string& name) const;
 
+    // Overwrites an existing mesh with a new mesh
+    void ReplaceMesh(uint32_t meshID, std::unique_ptr<Mesh> mesh);
+
 private:
 
     uint32_t nextID = 0;

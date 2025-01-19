@@ -30,5 +30,13 @@ uint32_t MeshManager::GetMeshID(const std::string &name) const {
     return -1;
 }
 
-
+void MeshManager::ReplaceMesh(uint32_t meshID, std::unique_ptr<Mesh> mesh) {
+    auto it = meshes.find(meshID);
+    if(it == meshes.end()) {
+        Log::Output(Log::Severity::WARNING, "Mesh does not exist");
+        return;
+    }
+    it->second = std::move(mesh);
+    Log::Output(Log::Severity::HAPPY, "Replaced mesh");
+}
 
