@@ -55,6 +55,15 @@ int main() {
 
 	// Create a single red cube entity
 	auto cubeEntity = coordinator.CreateEntity();
+	auto cubeEntity2 = coordinator.CreateEntity();
+	auto cubeEntity3 = coordinator.CreateEntity();
+
+	auto chunkTestEntity = coordinator.CreateEntity();
+
+	coordinator.AddComponent(
+		chunkTestEntity,
+		Transform{
+		});
 
 	coordinator.AddComponent(
 		cubeEntity,
@@ -78,6 +87,54 @@ int main() {
 
 	coordinator.AddComponent(
 		cubeEntity,
+		RigidBody{});
+
+	coordinator.AddComponent(
+	cubeEntity2,
+	Transform{
+		.position = glm::vec3(30.0f, 0.0f, 0.0f), // Centered at the origin
+		.rotation = glm::vec3(110.0f, 0.0f, 110.0f), // No rotation
+		.scale = glm::vec3(1.0f, 1.0f, 1.0f)     // Unit scale
+	});
+
+	coordinator.AddComponent(
+		cubeEntity2,
+		Renderable{
+			.shaderID = shaderManager.GetShaderID("basic"),
+			.meshID = meshManager.GetMeshID("teapot"),
+			.color = glm::vec3(1.0f, 0.0f, 0.0f) // Red color
+		});
+
+	coordinator.AddComponent(
+		cubeEntity2,
+		Gravity{Vec3(0.0f, 0.f, 0.0f)});
+
+	coordinator.AddComponent(
+		cubeEntity2,
+		RigidBody{});
+
+	coordinator.AddComponent(
+	cubeEntity3,
+	Transform{
+		.position = glm::vec3(60.0f, 0.0f, 0.0f), // Centered at the origin
+		.rotation = glm::vec3(0.0f, 0.0f, 0.0f), // No rotation
+		.scale = glm::vec3(12.0f, 1.0f, 1.0f)     // Unit scale
+	});
+
+	coordinator.AddComponent(
+		cubeEntity3,
+		Renderable{
+			.shaderID = shaderManager.GetShaderID("basic"),
+			.meshID = meshManager.GetMeshID("teapot"),
+			.color = glm::vec3(1.0f, 0.0f, 0.0f) // Red color
+		});
+
+	coordinator.AddComponent(
+		cubeEntity3,
+		Gravity{Vec3(0.0f, 0.f, 0.0f)});
+
+	coordinator.AddComponent(
+		cubeEntity3,
 		RigidBody{});
 
     float dt = 0.0f;

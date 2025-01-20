@@ -53,7 +53,7 @@ public:
         // For sure required order: Render -> Transform -> Everything else
         RegisterSystem<RenderSystem, Renderable, Transform>();
         RegisterSystem<TransformSystem, Transform>();
-        RegisterSystem<ChunkSystem, Chunk, Renderable>();
+        RegisterSystem<ChunkSystem, Chunk>();
         RegisterSystem<PhysicsSystem, Transform, RigidBody, Gravity>();
         RegisterSystem<CameraSystem, Transform, Camera>();
 

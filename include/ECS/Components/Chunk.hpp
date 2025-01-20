@@ -39,12 +39,18 @@ struct Chunk {
     // Bitfield to represent the dirtiness of each subchunk
     std::bitset<NUM_SUBCHUNKS> flags;
 
+    // Mesh ID for each chunk
+    std::array<uint32_t, NUM_SUBCHUNKS> subchunkMeshes;
+
     Chunk() {
         // Init all blocks to air
         blocks.resize(CHUNK_SIZE_X * CHUNK_SIZE_Y * CHUNK_SIZE_Z, Block());
 
         // Set all to dirty
         flags.set();
+
+        // Init all mesh IDs to -1 (Invalid mesh, won't render)
+        subchunkMeshes.fill(-1);
     }
 };
 
@@ -73,19 +79,19 @@ inline uint32_t To1DIndex(uint32_t x, uint32_t y, uint32_t z) {
 }
 
 // Get block at position x,y,z
-Block GetBlock(const Chunk& chunk, int x, int y, int z) {
+inline Block GetBlock(const Chunk& chunk, int x, int y, int z) {
     int index = To1DIndex(x, y, z);
     return chunk.blocks[index];
 }
 
 // Set block at position x,y,z
-void SetBlock(Chunk& chunk, int x, int y, int z, BlockType type) {
+inline void SetBlock(Chunk& chunk, int x, int y, int z, BlockType type) {
     int index = To1DIndex(x, y, z);
     chunk.blocks[index].type = type;
 }
 
 // Determine if neighbor is air or out of bounds
-bool IsAirOrOutOfBounds(const Chunk& chunk, int nx, int ny, int nz) {
+inline bool IsAirOrOutOfBounds(const Chunk& chunk, int nx, int ny, int nz) {
     if(nx < 0 || nx >= CHUNK_SIZE_X ||
         ny < 0 || ny >= CHUNK_SIZE_Y ||
         nz < 0 || nz >= CHUNK_SIZE_Z ) {

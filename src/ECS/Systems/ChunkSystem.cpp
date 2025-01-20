@@ -54,10 +54,23 @@ void ChunkSystem::Init() {
     // No initialization
 }
 
+void ChunkSystem::InitChunk(Entity& entity) {
+    auto& chunk = coordinator.GetComponent<Chunk>(entity);
+
+    for (uint32_t i = 0; i < NUM_SUBCHUNKS; i++) {
+        // Create an "empty" Mesh
+        auto emptyMesh = std::make_unique<Mesh>();
+        // Add it to MeshManager
+        uint32_t meshID = meshManager.AddMesh("chunk_submesh_" + std::to_string((unsigned long)entity) + "_" + std::to_string(i),
+                                          std::move(emptyMesh));
+        // Store the ID in the chunk
+        chunk.subchunkMeshes[i] = meshID;
+    }
+}
+
 void ChunkSystem::Update(float dt) {
     for(auto& entity : entities) {
         auto& chunk = coordinator.GetComponent<Chunk>(entity);
-        auto& render = coordinator.GetComponent<Renderable>(entity);
 
         // For each subchunk, if dirty, regenerate its mesh
         for(uint32_t i = 0; i < NUM_SUBCHUNKS; ++i) {
@@ -66,9 +79,21 @@ void ChunkSystem::Update(float dt) {
                 Mesh newMesh = GenerateSubchunk(chunk, i);
                 std::unique_ptr<Mesh> newMeshPtr = std::make_unique<Mesh>(std::move(newMesh));
 
-                meshManager.ReplaceMesh(render.meshID, std::move(newMeshPtr));
+                uint32_t meshID = chunk.subchunkMeshes[i];
+                meshManager.ReplaceMesh(meshID, std::move(newMeshPtr));
 
                 MarkSubchunkClean(chunk, i);
+            }
+        }
+
+        // Render meshes
+        for (uint32_t i = 0; i < NUM_SUBCHUNKS; i++) {
+            uint32_t meshID = chunk.subchunkMeshes[i];
+            Mesh* mesh = meshManager.GetMesh(meshID);
+            if (mesh) {
+                mesh->Bind();
+                mesh->Draw();
+                mesh->Unbind();
             }
         }
     }
