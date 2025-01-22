@@ -6,22 +6,24 @@
 
 #include "Core/Log.hpp"
 
-uint32_t MeshManager::AddMesh(const std::string &name, std::unique_ptr<Mesh> mesh) {
-    uint32_t id = nextID++;
+int32_t MeshManager::AddMesh(const std::string &name, std::unique_ptr<Mesh> mesh) {
+    int32_t id = nextID++;
     meshes[id] = std::move(mesh);
     nameToID[name] = id;
+
+    Log::Output(Log::Severity::HAPPY, "Mesh has been created: " + name + " at ID: " + std::to_string(id));
     return id;
 }
 
-Mesh *MeshManager::GetMesh(uint32_t id) {
+Mesh *MeshManager::GetMesh(int32_t id) {
     if(meshes.find(id) != meshes.end()) {
         return meshes[id].get();
     }
-    Log::Output(Log::Severity::ERROR, "Mesh does not exist");
+    Log::Output(Log::Severity::ERROR, "Mesh does not exist: " + std::to_string(id));
     return nullptr;
 }
 
-uint32_t MeshManager::GetMeshID(const std::string &name) const {
+int32_t MeshManager::GetMeshID(const std::string &name) const {
     auto it = nameToID.find(name);
     if(it != nameToID.end()) {
         return it->second;
@@ -30,7 +32,7 @@ uint32_t MeshManager::GetMeshID(const std::string &name) const {
     return -1;
 }
 
-void MeshManager::ReplaceMesh(uint32_t meshID, std::unique_ptr<Mesh> mesh) {
+void MeshManager::ReplaceMesh(int32_t meshID, std::unique_ptr<Mesh> mesh) {
     auto it = meshes.find(meshID);
     if(it == meshes.end()) {
         Log::Output(Log::Severity::WARNING, "Mesh does not exist");

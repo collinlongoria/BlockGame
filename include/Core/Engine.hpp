@@ -82,6 +82,8 @@ public:
 
     // Main loop
     void Update(float dt) {
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
         // Update all the systems
         // TODO: find a better way to do this?
         auto physicsSystem = std::static_pointer_cast<PhysicsSystem>(systemMap[typeid(PhysicsSystem)]);

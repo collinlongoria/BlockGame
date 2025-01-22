@@ -134,7 +134,7 @@ private:
 
         glBindVertexArray(0);
 
-        Log::Output(Log::Severity::HAPPY, "A mesh has been created");
+        //Log::Output(Log::Severity::HAPPY, "A mesh has been created");
     }
 
     // Destroy a mesh

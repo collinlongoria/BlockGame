@@ -8,6 +8,12 @@
 #include "ECS/Components/Chunk.hpp"
 #include "Graphics/Mesh.hpp"
 
+// Place a Block
+void PlaceBlock(Chunk& chunk, int x, int y, int z, BlockType type);
+
+// Remove a block
+void RemoveBlock(Chunk& chunk, int x, int y, int z);
+
 class ChunkSystem : public System {
 public:
     void Init();
@@ -15,13 +21,7 @@ public:
     void Update(float dt);
 
     // Initialize a chunk, to fill mesh IDs
-    void InitChunk(Entity& entity);
-
-    // Place a Block
-    void PlaceBlock(Chunk& chunk, int x, int y, int z, BlockType type);
-
-    // Remove a block
-    void RemoveBlock(Chunk& chunk, int x, int y, int z);
+    void InitChunk(const Entity& entity);
 
 private:
     // Generate mesh for one subchunk

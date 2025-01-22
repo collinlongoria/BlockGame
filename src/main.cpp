@@ -51,6 +51,7 @@ int main() {
 
 	// Load resources
 	shaderManager.AddShader("basic", std::make_unique<Shader>("shaders/basic.vert", "shaders/basic.frag"));
+	shaderManager.AddShader("chunk", std::make_unique<Shader>("shaders/chunk.vert", "shaders/chunk.frag"));
 	meshManager.AddMesh("teapot", std::make_unique<Mesh>("assets/teapot.obj"));
 
 	// Create a single red cube entity
@@ -60,11 +61,19 @@ int main() {
 
 	auto chunkTestEntity = coordinator.CreateEntity();
 
+	/*
 	coordinator.AddComponent(
 		chunkTestEntity,
 		Transform{
+			.position = glm::vec3(0.0f, 0.0f, 0.0f), // Centered at the origin
+			.rotation = glm::vec3(0.0f, 0.0f, 0.0f), // No rotation
+			.scale = glm::vec3(1.0f, 1.0f, 1.0f)     // Unit scale
 		});
 
+	coordinator.AddComponent(
+		chunkTestEntity,
+		Chunk{});
+*/
 	coordinator.AddComponent(
 		cubeEntity,
 		Transform{
@@ -140,7 +149,7 @@ int main() {
     float dt = 0.0f;
 	int fps = 0;
 	float updateFpsTimer = 10.0f;
-
+	bool placed = false;
     // Main loop
     while(!windowManager.Quit()) {
         auto start = std::chrono::high_resolution_clock::now();
@@ -149,6 +158,8 @@ int main() {
 
     	auto& trans = coordinator.GetComponent<Transform>(cubeEntity);
     	auto& col = coordinator.GetComponent<Renderable>(cubeEntity);
+
+    	//auto& chunk = coordinator.GetComponent<Chunk>(chunkTestEntity);
     	//trans.rotation.x += 2 * dt;
     	//trans.rotation.y += 3 * dt;
     	//trans.rotation.z *= -1.5 * dt;
@@ -165,6 +176,14 @@ int main() {
     		col.color.b -= speed; // Blue to Magenta to Red
     		col.color.r += speed;
     	}
+
+    	/*
+    	if(!placed) {
+    		placed = true;
+
+    		PlaceBlock(chunk, 5, 6, 7, BlockType::Grass);
+    	}
+    	*/
 
     	engine.Update(dt);
 

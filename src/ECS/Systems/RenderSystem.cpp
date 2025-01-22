@@ -14,32 +14,18 @@
 extern Coordinator coordinator;
 extern ShaderManager shaderManager;
 extern MeshManager meshManager;
+extern Entity cameraEntity;
 
 void RenderSystem::Init() {
 
-    camera = coordinator.CreateEntity();
-
-    coordinator.AddComponent(
-        camera,
-        Transform{
-            .position = Vec3(0.0f, 0.0f, 0.0f)
-        }
-    );
-
-    coordinator.AddComponent(
-        camera,
-        Camera{
-            .projectionMatrix = Camera::ProjectionMatrix(45.0f, 0.1f, 1000.0f, 1024, 760)
-        }
-        );
+    coordinator.InitCamera();
 
 }
 
 void RenderSystem::Update(float dt) {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    auto& cameraTransform = coordinator.GetComponent<Transform>(camera);
-    auto& cameraCamera = coordinator.GetComponent<Camera>(camera);
+    auto& cameraTransform = coordinator.GetComponent<Transform>(cameraEntity);
+    auto& cameraCamera = coordinator.GetComponent<Camera>(cameraEntity);
 
     // Calculate the forward direction based on the camera's orientation
     Vec3 forward = glm::normalize(glm::vec3(
@@ -66,6 +52,8 @@ void RenderSystem::Update(float dt) {
 
         auto shader = shaderManager.GetShader(renderable.shaderID);
         auto mesh = meshManager.GetMesh(renderable.meshID);
+
+        if(!shader || !mesh) continue;
 
         mesh->Bind();
 

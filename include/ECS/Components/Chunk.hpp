@@ -40,7 +40,11 @@ struct Chunk {
     std::bitset<NUM_SUBCHUNKS> flags;
 
     // Mesh ID for each chunk
-    std::array<uint32_t, NUM_SUBCHUNKS> subchunkMeshes;
+    std::array<int32_t, NUM_SUBCHUNKS> subchunkMeshes;
+
+    // Bool to determine if chunk has been initialzied
+    // Probably better way to do this
+    bool initialized;
 
     Chunk() {
         // Init all blocks to air
@@ -51,6 +55,8 @@ struct Chunk {
 
         // Init all mesh IDs to -1 (Invalid mesh, won't render)
         subchunkMeshes.fill(-1);
+
+        initialized = false;
     }
 };
 
@@ -75,7 +81,7 @@ inline void MarkSubchunkClean(Chunk& chunk, uint32_t subIndex) {
 }
 
 inline uint32_t To1DIndex(uint32_t x, uint32_t y, uint32_t z) {
-    return x + z * CHUNK_SIZE_X + y * CHUNK_SIZE_Y * CHUNK_SIZE_Z;
+    return x + z * CHUNK_SIZE_X + y * (CHUNK_SIZE_X * CHUNK_SIZE_Z);
 }
 
 // Get block at position x,y,z

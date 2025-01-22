@@ -13,20 +13,20 @@
 class MeshManager {
 public:
 
-    uint32_t AddMesh(const std::string& name, std::unique_ptr<Mesh> mesh);
+    int32_t AddMesh(const std::string& name, std::unique_ptr<Mesh> mesh);
 
-    Mesh* GetMesh(uint32_t id);
+    Mesh* GetMesh(int32_t id);
 
-    uint32_t GetMeshID(const std::string& name) const;
+    int32_t GetMeshID(const std::string& name) const;
 
     // Overwrites an existing mesh with a new mesh
-    void ReplaceMesh(uint32_t meshID, std::unique_ptr<Mesh> mesh);
+    void ReplaceMesh(int32_t meshID, std::unique_ptr<Mesh> mesh);
 
 private:
 
-    uint32_t nextID = 0;
+    int32_t nextID = 0;
 
-    std::unordered_map<uint32_t, std::unique_ptr<Mesh>> meshes;
+    std::unordered_map<int32_t, std::unique_ptr<Mesh>> meshes;
 
     std::unordered_map<std::string, int> nameToID;
 };

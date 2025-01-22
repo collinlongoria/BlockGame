@@ -8,9 +8,12 @@
 #include "ECS/Coordinator.hpp"
 #include "ECS/Components/Renderable.hpp"
 #include "Graphics/MeshManager.hpp"
+#include "Graphics/ShaderManager.hpp"
 
 extern Coordinator coordinator;
 extern MeshManager meshManager;
+extern ShaderManager shaderManager;
+extern Entity cameraEntity;
 
 // Useful definitions related to mesh generation
 static const Vec3 FACE_DIRS[6] {
@@ -54,23 +57,30 @@ void ChunkSystem::Init() {
     // No initialization
 }
 
-void ChunkSystem::InitChunk(Entity& entity) {
+void ChunkSystem::InitChunk(const Entity& entity) {
     auto& chunk = coordinator.GetComponent<Chunk>(entity);
 
     for (uint32_t i = 0; i < NUM_SUBCHUNKS; i++) {
         // Create an "empty" Mesh
         auto emptyMesh = std::make_unique<Mesh>();
         // Add it to MeshManager
-        uint32_t meshID = meshManager.AddMesh("chunk_submesh_" + std::to_string((unsigned long)entity) + "_" + std::to_string(i),
+        int32_t meshID = meshManager.AddMesh("chunk_submesh_" + std::to_string((unsigned long)entity) + "_" + std::to_string(i),
                                           std::move(emptyMesh));
         // Store the ID in the chunk
         chunk.subchunkMeshes[i] = meshID;
+
+        MarkSubchunkClean(chunk, i);
     }
 }
 
 void ChunkSystem::Update(float dt) {
     for(auto& entity : entities) {
         auto& chunk = coordinator.GetComponent<Chunk>(entity);
+
+        if(!chunk.initialized) {
+            InitChunk(entity);
+            chunk.initialized = true;
+        }
 
         // For each subchunk, if dirty, regenerate its mesh
         for(uint32_t i = 0; i < NUM_SUBCHUNKS; ++i) {
@@ -79,8 +89,8 @@ void ChunkSystem::Update(float dt) {
                 Mesh newMesh = GenerateSubchunk(chunk, i);
                 std::unique_ptr<Mesh> newMeshPtr = std::make_unique<Mesh>(std::move(newMesh));
 
-                uint32_t meshID = chunk.subchunkMeshes[i];
-                meshManager.ReplaceMesh(meshID, std::move(newMeshPtr));
+                int32_t meshID = chunk.subchunkMeshes[i];
+                if(meshID != -1) meshManager.ReplaceMesh(meshID, std::move(newMeshPtr));
 
                 MarkSubchunkClean(chunk, i);
             }
@@ -97,9 +107,80 @@ void ChunkSystem::Update(float dt) {
             }
         }
     }
+
+    //////////////////////////
+    // RENDER CODE
+    /////////////////////////
+
+    auto& cameraTransform = coordinator.GetComponent<Transform>(cameraEntity);
+    auto& cameraCamera = coordinator.GetComponent<Camera>(cameraEntity);
+
+    // Calculate the forward direction based on the camera's orientation
+    Vec3 forward = glm::normalize(glm::vec3(
+     sin(glm::radians(cameraTransform.rotation.y)) * cos(glm::radians(cameraTransform.rotation.x)), // Swap sin/cos for OpenGL
+    sin(glm::radians(cameraTransform.rotation.x)),
+    -cos(glm::radians(cameraTransform.rotation.y)) * cos(glm::radians(cameraTransform.rotation.x))// Negative Z for forward
+    ));
+
+    // Calculate the up direction based on the camera's orientation
+    Vec3 right = glm::normalize(glm::cross(forward, Vec3(0.0f, 1.0f, 0.0f))); // Right vector
+    Vec3 up = glm::normalize(glm::cross(right, forward));                     // Corrected up vector
+
+    // Use the transform position and forward vector for the view matrix
+    glm::mat4 view = glm::lookAt(
+        cameraTransform.position,                // Camera position
+        cameraTransform.position + forward,      // Camera target (position + forward direction)
+        up                                       // Camera up direction
+    );
+
+    // Bind the chunk shader
+    auto chunkShader = shaderManager.GetShader(shaderManager.GetShaderID("chunk"));
+    chunkShader->Bind();
+
+    // For example, set a uniform directional light:
+    chunkShader->SetUniform("lightDir", Vec3(0.3f, -1.0f, 0.2f));
+    chunkShader->SetUniform("viewPos", view);
+
+    // Set block colors [0..4], just as an example
+    // If you have more than 5 types, expand this array or do a loop
+    chunkShader->SetUniform("blockColors[0]", Vec3(0.8f, 0.8f, 0.8f));  // Air => won't be drawn anyway
+    chunkShader->SetUniform("blockColors[1]", Vec3(0.5f, 0.3f, 0.1f));  // Dirt
+    chunkShader->SetUniform("blockColors[2]", Vec3(0.3f, 0.6f, 0.2f));  // Grass
+    chunkShader->SetUniform("blockColors[3]", Vec3(0.9f, 0.9f, 0.5f));  // Sand
+    chunkShader->SetUniform("blockColors[4]", Vec3(0.4f, 0.4f, 0.4f));  // Stone
+
+    // Let's gather all chunk entities
+    for (auto entity : entities) {
+        auto& chunk = coordinator.GetComponent<Chunk>(entity);
+
+        // If you want a chunk transform, you could do:
+        // if (coordinator.HasComponent<Transform>(entity)) {...}
+        // but for now let's assume chunk is at origin => identity model
+
+        glm::mat4 model = glm::mat4(1.0f);
+
+        // Upload model/view/proj
+        chunkShader->SetUniform("uView",  view);
+        chunkShader->SetUniform("uProjection", cameraCamera.projectionMatrix);
+        chunkShader->SetUniform("uModel", model);
+
+        // Render each subchunk mesh
+        for (uint32_t i = 0; i < NUM_SUBCHUNKS; i++) {
+            uint32_t meshID = chunk.subchunkMeshes[i];
+            Mesh* mesh = meshManager.GetMesh(meshID);
+            if (!mesh) continue;
+
+            mesh->Bind();
+            mesh->Draw();
+            mesh->Unbind();
+        }
+    }
+
+    glUseProgram(0);
+    glBindVertexArray(0);
 }
 
-void ChunkSystem::PlaceBlock(Chunk& chunk, int x, int y, int z, BlockType type) {
+void PlaceBlock(Chunk& chunk, int x, int y, int z, BlockType type) {
     if(GetBlock(chunk, x, y, z).type == type) return;
 
     SetBlock(chunk, x, y, z, type);
@@ -117,7 +198,7 @@ void ChunkSystem::PlaceBlock(Chunk& chunk, int x, int y, int z, BlockType type) 
     }
 }
 
-void ChunkSystem::RemoveBlock(Chunk& chunk, int x, int y, int z) {
+void RemoveBlock(Chunk& chunk, int x, int y, int z) {
     if(GetBlock(chunk, x, y, z).type == BlockType::Air) return;
 
     SetBlock(chunk, x, y, z, BlockType::Air);

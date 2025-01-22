@@ -16,7 +16,6 @@ public:
     void Update(float dt);
 
 private:
-    Entity camera;
 };
 
 

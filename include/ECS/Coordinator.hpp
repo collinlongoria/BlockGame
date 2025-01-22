@@ -9,7 +9,12 @@
 #include "EntityManager.hpp"
 #include "EventManager.hpp"
 #include "SystemManager.hpp"
+#include "Components/Camera.hpp"
+#include "Components/Transform.hpp"
 
+// global camera
+// this should not go here, but I just want to finish this
+inline Entity cameraEntity;
 
 class Coordinator {
 public:
@@ -19,6 +24,25 @@ public:
         entityManager = std::make_unique<EntityManager>();
         systemManager = std::make_unique<SystemManager>();
         eventManager = std::make_unique<EventManager>();
+    }
+
+    // Creates the camera. Must be called at some point (see how stupid this is?)
+    void InitCamera() {
+        cameraEntity = entityManager->CreateEntity();
+
+        AddComponent(
+            cameraEntity,
+                Transform{
+                    .position = Vec3(0.0f, 0.0f, 0.0f)
+                }
+        );
+
+        AddComponent(
+            cameraEntity,
+                Camera{
+                    .projectionMatrix = Camera::ProjectionMatrix(45.0f, 0.1f, 1000.0f, 1024, 760)
+                }
+        );
     }
 
     // Entity Functions:
