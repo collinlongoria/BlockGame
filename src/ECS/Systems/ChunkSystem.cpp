@@ -85,6 +85,8 @@ void ChunkSystem::Update(float dt) {
         // For each subchunk, if dirty, regenerate its mesh
         for(uint32_t i = 0; i < NUM_SUBCHUNKS; ++i) {
             if(IsSubchunkDirty(chunk, i)) {
+                Log::Output(Log::Severity::MESSAGE, "Subchunk " + std::to_string(i) + " is being updated");
+
                 // Rebuild Mesh
                 Mesh newMesh = GenerateSubchunk(chunk, i);
                 std::unique_ptr<Mesh> newMeshPtr = std::make_unique<Mesh>(std::move(newMesh));
@@ -93,17 +95,6 @@ void ChunkSystem::Update(float dt) {
                 if(meshID != -1) meshManager.ReplaceMesh(meshID, std::move(newMeshPtr));
 
                 MarkSubchunkClean(chunk, i);
-            }
-        }
-
-        // Render meshes
-        for (uint32_t i = 0; i < NUM_SUBCHUNKS; i++) {
-            uint32_t meshID = chunk.subchunkMeshes[i];
-            Mesh* mesh = meshManager.GetMesh(meshID);
-            if (mesh) {
-                mesh->Bind();
-                mesh->Draw();
-                mesh->Unbind();
             }
         }
     }
@@ -137,12 +128,8 @@ void ChunkSystem::Update(float dt) {
     auto chunkShader = shaderManager.GetShader(shaderManager.GetShaderID("chunk"));
     chunkShader->Bind();
 
-    // For example, set a uniform directional light:
-    chunkShader->SetUniform("lightDir", Vec3(0.3f, -1.0f, 0.2f));
     chunkShader->SetUniform("viewPos", view);
 
-    // Set block colors [0..4], just as an example
-    // If you have more than 5 types, expand this array or do a loop
     chunkShader->SetUniform("blockColors[0]", Vec3(0.8f, 0.8f, 0.8f));  // Air => won't be drawn anyway
     chunkShader->SetUniform("blockColors[1]", Vec3(0.5f, 0.3f, 0.1f));  // Dirt
     chunkShader->SetUniform("blockColors[2]", Vec3(0.3f, 0.6f, 0.2f));  // Grass
@@ -152,17 +139,12 @@ void ChunkSystem::Update(float dt) {
     // Let's gather all chunk entities
     for (auto entity : entities) {
         auto& chunk = coordinator.GetComponent<Chunk>(entity);
-
-        // If you want a chunk transform, you could do:
-        // if (coordinator.HasComponent<Transform>(entity)) {...}
-        // but for now let's assume chunk is at origin => identity model
-
-        glm::mat4 model = glm::mat4(1.0f);
+        auto& transform = coordinator.GetComponent<Transform>(entity);
 
         // Upload model/view/proj
         chunkShader->SetUniform("uView",  view);
         chunkShader->SetUniform("uProjection", cameraCamera.projectionMatrix);
-        chunkShader->SetUniform("uModel", model);
+        chunkShader->SetUniform("uModel", transform.matrix);
 
         // Render each subchunk mesh
         for (uint32_t i = 0; i < NUM_SUBCHUNKS; i++) {
@@ -217,7 +199,7 @@ void RemoveBlock(Chunk& chunk, int x, int y, int z) {
 Mesh ChunkSystem::GenerateSubchunk(const Chunk &chunk, uint32_t subIndex) {
     // Y range for this subchunk
     uint32_t yStart = subIndex * SUBCHUNK_HEIGHT;
-    uint32_t yEnd = yStart * SUBCHUNK_HEIGHT;
+    uint32_t yEnd = yStart + SUBCHUNK_HEIGHT;
     if(yEnd > CHUNK_SIZE_Y) {
         yEnd = CHUNK_SIZE_Y;
     }

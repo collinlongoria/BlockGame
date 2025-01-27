@@ -6,7 +6,6 @@ in float fragType;
 out vec4 finalColor;
 
 uniform vec3 blockColors[5];
-uniform vec3 lightDir;
 uniform vec3 viewPos;
 
 void main(){
@@ -15,11 +14,13 @@ void main(){
         finalColor = vec4(1.0, 0.0, 1.0, 1.0);
         return;
     }
-
-    vec3 baseColor = blockColors[typeIndex];
-
-    vec3 N = normalize(fragNorm);
-    vec3 L = normalize(-lightDir);
-    float diff = max(dot(N, L), 0.15);
-    finalColor = vec4(baseColor * diff, 1.0);
+    else if(typeIndex == 1){
+        finalColor = vec4(1.0, 0.0, 0.0, 1.0);
+    }
+    else if(typeIndex == 2){
+        finalColor = vec4(0.0, 1.0, 0.0, 1.0);
+    }
+    else{
+        finalColor = vec4(0.8, 0.8, 0.8, 1.0);
+    }
 }

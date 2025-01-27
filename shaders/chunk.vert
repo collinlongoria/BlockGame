@@ -6,7 +6,7 @@ layout(location = 2) in vec2 inUV;
 
 uniform mat4 uModel;
 uniform mat4 uView;
-uniform mat4 uProj;
+uniform mat4 uProjection;
 
 out vec3 fragNorm;
 out float fragType;
@@ -15,5 +15,5 @@ void main(){
     fragNorm = inNorm;
     fragType = inUV.x;
 
-    gl_Position = uProj * uView * uModel * vec4(inPos, 1.0);
+    gl_Position = uProjection * uView * uModel * vec4(inPos, 1.0);
 }

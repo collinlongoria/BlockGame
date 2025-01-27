@@ -8,6 +8,8 @@
 #include <cstdint>
 #include <vector>
 
+#include "Core/Log.hpp"
+
 enum class BlockType : uint32_t {
     Air = 0,
     Dirt = 1,
@@ -87,6 +89,13 @@ inline uint32_t To1DIndex(uint32_t x, uint32_t y, uint32_t z) {
 // Get block at position x,y,z
 inline Block GetBlock(const Chunk& chunk, int x, int y, int z) {
     int index = To1DIndex(x, y, z);
+
+    if(chunk.blocks[index].type != BlockType::Air)
+        Log::Output(Log::Severity::MESSAGE, "Block found at: (" +
+                                                 std::to_string(x) + ", " +
+                                                 std::to_string(y) + ", " +
+                                                 std::to_string(z) + "), Type: " + std::to_string(static_cast<int>(chunk.blocks[index].type)));
+
     return chunk.blocks[index];
 }
 

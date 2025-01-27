@@ -55,25 +55,26 @@ int main() {
 	meshManager.AddMesh("teapot", std::make_unique<Mesh>("assets/teapot.obj"));
 
 	// Create a single red cube entity
-	auto cubeEntity = coordinator.CreateEntity();
-	auto cubeEntity2 = coordinator.CreateEntity();
-	auto cubeEntity3 = coordinator.CreateEntity();
+	//auto cubeEntity = coordinator.CreateEntity();
+	//auto cubeEntity2 = coordinator.CreateEntity();
+	//auto cubeEntity3 = coordinator.CreateEntity();
 
 	auto chunkTestEntity = coordinator.CreateEntity();
 
-	/*
+
 	coordinator.AddComponent(
 		chunkTestEntity,
 		Transform{
 			.position = glm::vec3(0.0f, 0.0f, 0.0f), // Centered at the origin
 			.rotation = glm::vec3(0.0f, 0.0f, 0.0f), // No rotation
-			.scale = glm::vec3(1.0f, 1.0f, 1.0f)     // Unit scale
+			.scale = glm::vec3(10.0f, 10.0f, 10.0f)     // Unit scale
 		});
 
 	coordinator.AddComponent(
 		chunkTestEntity,
 		Chunk{});
-*/
+
+	/*
 	coordinator.AddComponent(
 		cubeEntity,
 		Transform{
@@ -145,6 +146,7 @@ int main() {
 	coordinator.AddComponent(
 		cubeEntity3,
 		RigidBody{});
+		*/
 
     float dt = 0.0f;
 	int fps = 0;
@@ -156,16 +158,17 @@ int main() {
 
     	windowManager.ProcessInput();
 
-    	auto& trans = coordinator.GetComponent<Transform>(cubeEntity);
-    	auto& col = coordinator.GetComponent<Renderable>(cubeEntity);
+    	//auto& trans = coordinator.GetComponent<Transform>(cubeEntity);
+    	//auto& col = coordinator.GetComponent<Renderable>(cubeEntity);
 
-    	//auto& chunk = coordinator.GetComponent<Chunk>(chunkTestEntity);
+    	auto& chunk = coordinator.GetComponent<Chunk>(chunkTestEntity);
     	//trans.rotation.x += 2 * dt;
     	//trans.rotation.y += 3 * dt;
     	//trans.rotation.z *= -1.5 * dt;
 
     	float speed = 0.01f;               // Adjust speed of the color change
 
+    	/*
     	if (col.color.r > 0.0f && col.color.b <= 0.0f) {
     		col.color.r -= speed; // Red to Yellow to Green
     		col.color.g += speed;
@@ -176,16 +179,15 @@ int main() {
     		col.color.b -= speed; // Blue to Magenta to Red
     		col.color.r += speed;
     	}
-
-    	/*
-    	if(!placed) {
-    		placed = true;
-
-    		PlaceBlock(chunk, 5, 6, 7, BlockType::Grass);
-    	}
     	*/
 
     	engine.Update(dt);
+
+    	if(!placed) {
+    		placed = true;
+    		Log::Output(Log::Severity::MESSAGE, "Placing the block");
+    		PlaceBlock(chunk, 0, 0, 0, BlockType::Grass);
+    	}
 
     	if(updateFpsTimer > 2.0f) {
     		updateFpsTimer = 0.0f;

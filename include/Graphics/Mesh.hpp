@@ -74,6 +74,8 @@ public:
 
         // Store indice count
         indicesCount = static_cast<GLsizei>(indices.size());
+
+        Log::Output(Log::Severity::MESSAGE,"Mesh has been updated!");
     }
 
     // Binds the mesh for use
